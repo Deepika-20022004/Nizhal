@@ -270,6 +270,21 @@
             </button>
           </div>
 
+          <!-- Category Tabs -->
+          <div class="flex flex-wrap gap-1.5 mb-4" id="calculator-filters">
+            <button onclick="filterCalculator('all', event)" class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all bg-nizhal-800 text-white shadow-sm">All Needs</button>
+            <button onclick="filterCalculator('education', event)" class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Education</button>
+            <button onclick="filterCalculator('food', event)" class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Food & Meals</button>
+            <button onclick="filterCalculator('endowments', event)" class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Endowments</button>
+            <button onclick="filterCalculator('health', event)" class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Health</button>
+            <button onclick="filterCalculator('projects', event)" class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Small Projects</button>
+          </div>
+
+          <!-- Category Description -->
+          <div id="calculator-category-desc" class="text-xs text-slate-500 bg-slate-50 border border-slate-150 p-3.5 rounded-xl mb-4 italic leading-relaxed">
+            Browse all core needs and sponsorship opportunities across education, food, health, and special projects.
+          </div>
+
           <!-- Interactive Calculator Items Container -->
           <div class="space-y-3 max-h-[520px] overflow-y-auto pr-2" id="calculator-items">
             <!-- Dynamically Rendered by Vanilla JS -->
@@ -1025,23 +1040,52 @@
     ];
 
     const sponsorshipItems = [
-      { id: 'shoes', name: 'Gift a pair of Shoes / Slippers', cost: 245, category: 'Clothing & Utilities' },
-      { id: 'groceries_day', name: 'Sponsor Vegetables & Groceries (1 day)', cost: 350, category: 'Nutrition' },
-      { id: 'medical_month', name: 'General Medical Expenses (1 month for 1 child)', cost: 588, category: 'Health' },
-      { id: 'notebooks', name: 'Gift complete set of Notebooks for a child', cost: 600, category: 'Education' },
-      { id: 'rice_month', name: 'Sponsor Bag of Rice (1 Month)', cost: 1000, category: 'Nutrition' },
-      { id: 'school_pack', name: 'Gift complete School Pack (Bag, Uniform, Shoes, Stationery)', cost: 1600, category: 'Education' },
-      { id: 'dinner', name: 'Provide Special Dinner for all children', cost: 1700, category: 'Nutrition' },
-      { id: 'day_expense', name: 'Sponsor Entire Home Expenses (1 Full Day)', cost: 2000, category: 'Daily Operations' },
-      { id: 'teacher_salary', name: 'Sponsor Evening Teacher Salary (1 Month)', cost: 3430, category: 'Staff Contribution' },
-      { id: 'all_meals', name: 'Provide All 3 Wholesome Meals for 1 Day', cost: 4700, category: 'Nutrition' },
-      { id: 'bookshelves', name: 'Gift Bookshelves, Study Tables or Chairs', cost: 15092, category: 'Infrastructure Support' },
-      { id: 'breakfast_year', name: 'Sponsor Breakfast for all children for 1 Year (on 1 day)', cost: 18000, category: 'Nutrition' },
+      // Gift of Education
+      { id: 'edu_bag', name: 'Gift a school bag for a child', cost: 245, costUSD: 5, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_shoes', name: 'Gift a pair of shoes for a child', cost: 245, costUSD: 5, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_uniform', name: 'Gift a set of uniform for a child', cost: 320, costUSD: 6, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_books', name: 'Gift complete set of Note books for a child', cost: 600, costUSD: 12, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_school_pack', name: 'Gift a school pack for a child (Includes school bag, books, pen, pencil, eraser, sharpener, shoes & uniform)', cost: 1600, costUSD: 32, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_teacher', name: "Sponsor a teacher's salary / month", cost: 3430, costUSD: 70, categoryId: 'education', category: 'Gift of Education' },
+
+      // Gift of Food
+      { id: 'food_breakfast', name: 'To Provide breakfast for our children', cost: 1500, costUSD: 23, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_lunch', name: 'To Provide Lunch for our Children', cost: 1700, costUSD: 26, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_dinner', name: 'To Provide Dinner for our Children', cost: 1500, costUSD: 23, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_all_meals', name: 'To Provide all the three times food for our children', cost: 4700, costUSD: 72, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_rice_month', name: 'Sponsor bag of Rice for a month', cost: 1000, costUSD: 15, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_groceries_day', name: 'Sponsor Vegetables & Groceries for a day', cost: 350, costUSD: 5, categoryId: 'food', category: 'Gift of Food' },
+
+      // Feeding Endowments
+      { id: 'endow_breakfast', name: 'Breakfast for our children for a year on a day', cost: 18000, costUSD: 277, categoryId: 'endowments', category: 'Feeding Endowments' },
+      { id: 'endow_lunch', name: 'Lunch for our children for a year on a day', cost: 10584, costUSD: 314, categoryId: 'endowments', category: 'Feeding Endowments' },
+      { id: 'endow_dinner', name: 'Dinner for our children for a year on a day', cost: 18000, costUSD: 277, categoryId: 'endowments', category: 'Feeding Endowments' },
+      { id: 'endow_rice_year', name: 'Sponsor bag of Rice for a year', cost: 12000, costUSD: 185, categoryId: 'endowments', category: 'Feeding Endowments' },
+
+      // Gift of Health
+      { id: 'health_medical', name: 'General Medical expenses for a month for a child', cost: 588, costUSD: 12, categoryId: 'health', category: 'Gift of Health' },
+
+      // Small Projects
+      { id: 'proj_bookshelves', name: 'Book shelves, table/chairs for children', cost: 15092, costUSD: 308, categoryId: 'projects', category: 'Small Projects' },
+      { id: 'proj_stationery', name: 'Stationary Items for our Children', cost: 4704, costUSD: 96, categoryId: 'projects', category: 'Small Projects' },
+      { id: 'proj_sheets', name: 'Bed sheets for our Children', cost: 2940, costUSD: 60, categoryId: 'projects', category: 'Small Projects' },
+      { id: 'proj_pillows', name: 'Pillows for our Children', cost: 1911, costUSD: 39, categoryId: 'projects', category: 'Small Projects' },
+      { id: 'proj_dresses', name: 'Dresses for our children', cost: 3724, costUSD: 76, categoryId: 'projects', category: 'Small Projects' }
     ];
 
     // Tracker for active calculations
     let selectedQuantities = {};
     let customDonationAmount = 0;
+    let activeCalculatorFilter = 'all';
+
+    const categoryDescriptions = {
+      all: "Browse all core needs and sponsorship opportunities across education, food, health, and special projects.",
+      education: "Education is the process of learning and acquiring information. It is the greatest asset of a human being. It is a must and we provide education to these children, whom we take care of. Your contribution to these schemes would help us in achieving this.",
+      food: "You can provide Breakfast/lunch/dinner etc for our children by sponsoring meals under these schemes. This will be a better opportunity to share and celebrate your birthdays, anniversaries and other special occasions etc.",
+      endowments: "Endowment schemes to sponsor children's meals or staple grain requirements for an entire year.",
+      health: "We need lots of resources to take care of our children’s health. You can contribute to the below by which we can meet the health care needs.",
+      projects: "Sponsor structural needs, furniture, utilities, and daily clothing essentials for the shelter home."
+    };
 
     // --- On Window Loaded Event ---
     window.onload = function() {
@@ -1059,7 +1103,7 @@
         selectedQuantities[item.id] = 0;
       });
 
-      renderCalculatorItems();
+      filterCalculator('all');
       renderReceiptSummary();
       filterGallery('all');
     };
@@ -1080,8 +1124,10 @@
       });
 
       // Highlight standard button based on tab index mapping
-      event.target.classList.add('bg-nizhal-100', 'text-nizhal-900', 'font-bold');
-      event.target.classList.remove('text-slate-600', 'hover:text-nizhal-700', 'hover:bg-slate-100/50');
+      if (event && event.target) {
+        event.target.classList.add('bg-nizhal-100', 'text-nizhal-900', 'font-bold');
+        event.target.classList.remove('text-slate-600', 'hover:text-nizhal-700', 'hover:bg-slate-100/50');
+      }
     }
 
     // Toggle Mobile Navigation Drawer
@@ -1099,44 +1145,108 @@
     }
 
     // --- Dynamic Calculator Construction ---
+    function filterCalculator(category, event) {
+      activeCalculatorFilter = category;
+      
+      // Update filter button styles
+      const buttons = document.querySelectorAll('.calc-filter-btn');
+      buttons.forEach(btn => {
+        btn.className = "calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100";
+      });
+      
+      // Highlight the active button
+      let clickedBtn = event ? event.target : null;
+      if (!clickedBtn) {
+        clickedBtn = Array.from(buttons).find(b => b.getAttribute('onclick').includes(`'${category}'`));
+      }
+      if (clickedBtn) {
+        clickedBtn.className = "calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all bg-nizhal-800 text-white shadow-sm";
+      }
+      
+      // Update description text
+      const descContainer = document.getElementById('calculator-category-desc');
+      if (descContainer) {
+        descContainer.innerText = categoryDescriptions[category] || '';
+      }
+      
+      renderCalculatorItems();
+    }
+
     function renderCalculatorItems() {
       const container = document.getElementById('calculator-items');
       container.innerHTML = '';
 
-      sponsorshipItems.forEach(item => {
-        const qty = selectedQuantities[item.id] || 0;
-        const itemClass = qty > 0 ? 'border-nizhal-500 bg-nizhal-50/50 shadow-sm' : 'border-slate-150 bg-white hover:border-slate-300';
-        
-        const card = document.createElement('div');
-        card.className = `p-4 rounded-xl border transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 ${itemClass}`;
-        card.innerHTML = `
-          <div class="space-y-1 flex-1">
-            <span class="text-[9px] font-extrabold uppercase bg-slate-100 text-slate-500 px-2 py-0.5 rounded">
-              ${item.category}
-            </span>
-            <h4 class="font-extrabold text-sm text-slate-900">${item.name}</h4>
-            <p class="text-xs font-black text-slate-700">₹ ${item.cost.toLocaleString()}</p>
-          </div>
+      const filteredItems = sponsorshipItems.filter(item => activeCalculatorFilter === 'all' || item.categoryId === activeCalculatorFilter);
 
-          <div class="flex items-center gap-3 self-end sm:self-auto">
-            <button
-              onclick="adjustQuantity('${item.id}', -1)"
-              class="w-8 h-8 rounded-lg flex items-center justify-center border font-bold text-sm transition-all ${qty > 0 ? 'border-nizhal-300 bg-white hover:bg-slate-50 text-slate-700' : 'border-slate-100 text-slate-300 cursor-not-allowed'}"
-              ${qty === 0 ? 'disabled' : ''}
-            >
-              -
-            </button>
-            <span class="w-6 text-center font-bold text-sm text-slate-900">${qty}</span>
-            <button
-              onclick="adjustQuantity('${item.id}', 1)"
-              class="w-8 h-8 rounded-lg border border-nizhal-300 bg-white hover:bg-nizhal-50 font-bold text-sm text-nizhal-800 transition"
-            >
-              +
-            </button>
-          </div>
-        `;
-        container.appendChild(card);
+      // Group items by categoryId to preserve ordering as defined in sponsorshipItems
+      const groups = [];
+      const groupMap = {};
+
+      filteredItems.forEach(item => {
+        if (!groupMap[item.categoryId]) {
+          groupMap[item.categoryId] = {
+            id: item.categoryId,
+            name: item.category,
+            items: []
+          };
+          groups.push(groupMap[item.categoryId]);
+        }
+        groupMap[item.categoryId].items.push(item);
       });
+
+      groups.forEach(group => {
+        // Create category section container
+        const section = document.createElement('div');
+        section.className = 'space-y-3 mb-6';
+
+        // Sub heading for the category
+        const subHeading = document.createElement('div');
+        subHeading.className = 'pt-2 pb-1.5 border-b border-slate-150 flex items-center gap-2 mb-2';
+        subHeading.innerHTML = `
+          <span class="w-1.5 h-1.5 rounded-full bg-nizhal-600"></span>
+          <h5 class="text-xs font-black uppercase tracking-wider text-nizhal-850">${group.name}</h5>
+        `;
+        section.appendChild(subHeading);
+
+        // Render cards for items in this group
+        group.items.forEach(item => {
+          const qty = selectedQuantities[item.id] || 0;
+          const itemClass = qty > 0 ? 'border-nizhal-500 bg-nizhal-50/50 shadow-sm' : 'border-slate-150 bg-white hover:border-slate-300';
+          
+          const card = document.createElement('div');
+          card.className = `p-4 rounded-xl border transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 ${itemClass}`;
+          card.innerHTML = `
+            <div class="space-y-1 flex-1">
+              <h4 class="text-sm text-slate-900">${item.name}</h4>
+              <p class="text-xs font-black text-slate-700">₹ ${item.cost.toLocaleString()} <span class="text-slate-400 font-normal text-[11px]">/ US$ ${item.costUSD}</span></p>
+            </div>
+
+            <div class="flex items-center gap-3 self-end sm:self-auto">
+              <button
+                onclick="adjustQuantity('${item.id}', -1)"
+                class="w-8 h-8 rounded-lg flex items-center justify-center border font-bold text-sm transition-all ${qty > 0 ? 'border-nizhal-300 bg-white hover:bg-slate-50 text-slate-700' : 'border-slate-100 text-slate-300 cursor-not-allowed'}"
+                ${qty === 0 ? 'disabled' : ''}
+              >
+                -
+              </button>
+              <span class="w-6 text-center font-bold text-sm text-slate-900">${qty}</span>
+              <button
+                onclick="adjustQuantity('${item.id}', 1)"
+                class="w-8 h-8 rounded-lg border border-nizhal-300 bg-white hover:bg-nizhal-50 font-bold text-sm text-nizhal-800 transition"
+              >
+                +
+              </button>
+            </div>
+          `;
+          section.appendChild(card);
+        });
+
+        container.appendChild(section);
+      });
+      
+      if (filteredItems.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 italic text-center py-8">No items found in this category.</p>`;
+      }
     }
 
     function adjustQuantity(itemId, change) {
@@ -1148,12 +1258,16 @@
     }
 
     function triggerDirectDonation(amount) {
-      // Find 'day_expense' (₹2000) inside list
-      selectedQuantities['day_expense'] = 1;
+      // Set the custom donation input and variable
+      const customInput = document.getElementById('custom-donation-input');
+      if (customInput) {
+        customInput.value = amount;
+      }
+      customDonationAmount = amount;
       renderCalculatorItems();
       renderReceiptSummary();
       navigateToSection('donation-planner');
-      showToastNotification("Sponsor Entire Home (₹2,000) added to planner.");
+      showToastNotification(`General Donation of ₹${amount.toLocaleString()} added to planner.`);
     }
 
     function updateCustomDonation() {
@@ -1166,7 +1280,10 @@
       sponsorshipItems.forEach(item => {
         selectedQuantities[item.id] = 0;
       });
-      document.getElementById('custom-donation-input').value = '';
+      const customInput = document.getElementById('custom-donation-input');
+      if (customInput) {
+        customInput.value = '';
+      }
       customDonationAmount = 0;
 
       renderCalculatorItems();
@@ -1184,6 +1301,14 @@
       return sum;
     }
 
+    function calculateTotalUSD() {
+      let sum = 0;
+      sponsorshipItems.forEach(item => {
+        sum += (selectedQuantities[item.id] || 0) * (item.costUSD || 0);
+      });
+      return sum;
+    }
+
     function renderReceiptSummary() {
       const listContainer = document.getElementById('receipt-summary-list');
       listContainer.innerHTML = '';
@@ -1194,10 +1319,13 @@
         if (qty > 0) {
           hasSelections = true;
           const li = document.createElement('div');
-          li.className = 'flex justify-between items-start text-slate-300';
+          li.className = 'flex justify-between items-start text-slate-300 mb-1';
           li.innerHTML = `
             <span class="flex-1 pr-4">${item.name} <strong class="text-yellow-400 font-bold">x${qty}</strong></span>
-            <span class="font-bold text-slate-100">₹ ${(item.cost * qty).toLocaleString()}</span>
+            <span class="font-bold text-slate-100 text-right shrink-0">
+              ₹ ${(item.cost * qty).toLocaleString()}
+              <br/><span class="text-slate-400 font-normal text-[10px]">US$ ${(item.costUSD * qty).toLocaleString()}</span>
+            </span>
           `;
           listContainer.appendChild(li);
         }
@@ -1206,10 +1334,13 @@
       if (customDonationAmount > 0) {
         hasSelections = true;
         const li = document.createElement('div');
-        li.className = 'flex justify-between items-start text-slate-300';
+        li.className = 'flex justify-between items-start text-slate-300 mb-1';
         li.innerHTML = `
           <span class="flex-1 pr-4">Custom General Support Contribution</span>
-          <span class="font-bold text-slate-100">₹ ${customDonationAmount.toLocaleString()}</span>
+          <span class="font-bold text-slate-100 text-right shrink-0">
+            ₹ ${customDonationAmount.toLocaleString()}
+            <br/><span class="text-slate-400 font-normal text-[10px]">US$ ${(Math.round(customDonationAmount / 83)).toLocaleString()}</span>
+          </span>
         `;
         listContainer.appendChild(li);
       }
@@ -1219,7 +1350,20 @@
       }
 
       const grandTotal = calculateTotal();
-      document.getElementById('final-sum-display').innerText = `₹ ${grandTotal.toLocaleString()}`;
+      const grandTotalUSD = calculateTotalUSD();
+      
+      let finalDisplay = `₹ ${grandTotal.toLocaleString()}`;
+      if (grandTotal > 0) {
+        let estUSD = grandTotalUSD;
+        if (customDonationAmount > 0) {
+          estUSD += Math.round(customDonationAmount / 83);
+        }
+        finalDisplay += ` / US$ ${estUSD.toLocaleString()}`;
+      } else {
+        finalDisplay = `₹ 0`;
+      }
+      
+      document.getElementById('final-sum-display').innerText = finalDisplay;
       
       // Update receipt simulator amount too
       document.getElementById('receipt-donor-amount').value = grandTotal > 0 ? grandTotal : 2000;
