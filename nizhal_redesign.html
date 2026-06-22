@@ -1196,6 +1196,7 @@
     let selectedQuantities = {};
     let customDonationAmount = 0;
     let activeCalculatorFilter = 'all';
+    let usdToInrRate = 83; // fallback default
 
     const categoryDescriptions = {
       all: "Browse all core needs and sponsorship opportunities across education, food, health, and special projects.",
@@ -1205,6 +1206,22 @@
       health: "We need lots of resources to take care of our children’s health. You can contribute to the below by which we can meet the health care needs.",
       projects: "Sponsor structural needs, furniture, utilities, and daily clothing essentials for the shelter home."
     };
+
+    async function fetchExchangeRate() {
+      try {
+        const response = await fetch('https://open.er-api.com/v6/latest/USD');
+        if (response.ok) {
+          const data = await response.json();
+          if (data && data.rates && data.rates.INR) {
+            usdToInrRate = parseFloat(data.rates.INR);
+            console.log(`Fetched real-time exchange rate: 1 USD = ₹${usdToInrRate}`);
+            renderReceiptSummary();
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch real-time exchange rate:', error);
+      }
+    }
 
     // --- On Window Loaded Event ---
     window.onload = function() {
@@ -1225,6 +1242,7 @@
       filterCalculator('all');
       renderReceiptSummary();
       filterGallery('all');
+      fetchExchangeRate();
     };
 
     // --- Core Layout Navigation Navigation Action ---
@@ -1458,7 +1476,7 @@
           <span class="flex-1 pr-4">Custom General Support Contribution</span>
           <span class="font-bold text-slate-100 text-right shrink-0">
             ₹${customDonationAmount.toLocaleString()}
-            <br/><span class="text-slate-400 font-normal text-[10px]">US $${(Math.round(customDonationAmount / 83)).toLocaleString()}</span>
+            <br/><span class="text-slate-400 font-normal text-[10px]">US $${(Math.round(customDonationAmount / usdToInrRate)).toLocaleString()}</span>
           </span>
         `;
         listContainer.appendChild(li);
@@ -1475,7 +1493,7 @@
       if (grandTotal > 0) {
         let estUSD = grandTotalUSD;
         if (customDonationAmount > 0) {
-          estUSD += Math.round(customDonationAmount / 83);
+          estUSD += Math.round(customDonationAmount / usdToInrRate);
         }
         finalDisplay += ` / US $${estUSD.toLocaleString()}`;
       } else {
