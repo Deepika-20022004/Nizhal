@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nizhal Charitable Trust - Coimbatore</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter (sans) & Playfair Display (serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Lucide Icons UMD CDN (Standard, safe, non-module execution) -->
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Custom premium scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .hero-pattern {
+      background-color: #0c2d25;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-slideUp {
+      animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nizhal: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#052e16',
+            },
+            brand: {
+              charcoal: '#1e293b',
+              accentGold: '#f59e0b',
+              accentGoldHover: '#d97706',
+              softRose: '#fff1f2',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-nizhal-200 selection:text-nizhal-950 min-h-screen flex flex-col">
+
+  <!-- Govt. Credential Header Ribbon -->
+  <div class="bg-emerald-950 text-white py-2 px-4 md:px-6 text-xs flex flex-col sm:flex-row justify-between items-center gap-2 font-semibold tracking-wider border-b border-emerald-900">
+    <div class="flex items-center gap-2 text-center sm:text-left">
+      <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+      <span>Govt. Registered Trust No: 470/IV/11 | 12A & 80G Tax Deductible Status</span>
+    </div>
+    <div class="flex gap-4 items-center font-medium">
+      <a href="tel:+919842430307" class="hover:text-amber-400 transition flex items-center gap-1.5">
+        <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i> +91 98424 30307
+      </a>
+      <span class="text-emerald-800 hidden sm:inline">|</span>
+      <span class="items-center gap-1.5 hidden sm:flex"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400"></i> Coimbatore, TN</span>
+    </div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Wordmark -->
+      <a href="#home" onclick="navigateToSection('home-section')" class="flex items-center gap-3 text-left focus:outline-none group">
+        <div class="w-12 h-12 bg-nizhal-800 rounded-xl flex items-center justify-center text-white shadow-md shadow-nizhal-900/10 group-hover:bg-nizhal-700 transition">
+          <i data-lucide="heart" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-extrabold tracking-tight text-slate-900 serif-title">
+            NIZHAL <span class="text-nizhal-700 text-sm font-light">Charitable Trust</span>
+          </h1>
+          <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Coimbatore, Tamil Nadu</p>
+        </div>
+      </a>
+
+      <!-- Desktop Links navigation -->
+      <nav class="hidden lg:flex items-center gap-1">
+        <button onclick="navigateToSection('home-section')" class="nav-btn px-3 py-2 rounded-lg font-bold text-sm text-nizhal-900 bg-nizhal-100 transition-all">Home</button>
+        <button onclick="navigateToSection('story-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Our Story</button>
+        <button onclick="navigateToSection('standards-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Care Standards</button>
+        <button onclick="navigateToSection('leadership-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Leadership</button>
+        <button onclick="navigateToSection('gallery-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Gallery</button>
+        <button onclick="navigateToSection('faq-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">FAQs</button>
+        <button onclick="navigateToSection('contact-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Contact Us</button>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:flex items-center">
+        <button
+          onclick="navigateToSection('donation-planner')"
+          class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-sm px-5 py-3 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center gap-2"
+        >
+          <i data-lucide="gift" class="w-4 h-4"></i>
+          Sponsor & Donate
+        </button>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button
+        onclick="toggleMobileMenu()"
+        class="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg focus:outline-none transition"
+        id="mobile-menu-btn"
+      >
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="hidden lg:hidden border-t border-slate-150 bg-white py-3 px-4 shadow-xl">
+      <div class="flex flex-col gap-1.5">
+        <button onclick="navigateToSection('home-section')" class="text-left w-full px-4 py-3 rounded-xl font-bold text-sm bg-nizhal-800 text-white">Home</button>
+        <button onclick="navigateToSection('story-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Our Story</button>
+        <button onclick="navigateToSection('standards-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Care Standards</button>
+        <button onclick="navigateToSection('leadership-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Leadership</button>
+        <button onclick="navigateToSection('gallery-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Gallery</button>
+        <button onclick="navigateToSection('faq-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">FAQs</button>
+        <button onclick="navigateToSection('contact-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Contact Us</button>
+        <button onclick="navigateToSection('donation-planner')" class="text-left w-full px-4 py-3 rounded-xl font-extrabold text-sm bg-amber-500 text-slate-950 mt-2 flex items-center justify-center gap-2">
+          <i data-lucide="gift" class="w-4 h-4"></i> Sponsor & Donate
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Website Container -->
+  <main class="flex-grow">
+
+    <!-- HERO SECTION -->
+    <section id="home-section" class="relative hero-pattern text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+      <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-emerald-950/20 to-transparent"></div>
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left animate-slideUp">
+          <div class="inline-flex items-center gap-2 bg-emerald-500/15 border border-emerald-400/30 px-3.5 py-1.5 rounded-full text-emerald-300 text-xs font-bold tracking-wider uppercase">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            80G Physical Tax-Exempt Status Approved
+          </div>
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight serif-title text-slate-100">
+            Shielding, Nurturing & <span class="text-yellow-400 italic">Empowering</span> Destitute Girls
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+            Nizhal Charitable Trust is a non-profitable, non-religious shelter home in Coimbatore. We give safety, legal protection, healthy meals, and high-quality education to girl children who have lost their natural safety nets.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+            <button
+              onclick="triggerDirectDonation(2000)"
+              class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-lg shadow-amber-900/40 transition-all text-center flex items-center justify-center gap-2"
+            >
+              <i data-lucide="gift" class="w-5 h-5 fill-slate-950"></i>
+              Sponsor 1 Day (₹2,000)
+            </button>
+            <button
+              onclick="navigateToSection('story-section')"
+              class="bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/20 px-8 py-4 rounded-xl backdrop-blur-sm transition-all text-center flex items-center justify-center"
+            >
+              Read Founder's Story
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Graphic Frame -->
+        <div class="lg:col-span-5 relative animate-slideUp">
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-nizhal-400 to-amber-500 opacity-20 blur-2xl"></div>
+          <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-950/40 p-4">
+            <img 
+              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600" 
+              alt="Nizhal girls reading books" 
+              class="rounded-xl w-full h-[320px] object-cover filter brightness-95"
+              onerror="this.src='https://placehold.co/600x400/224a45/ffffff?text=Nizhal+Children'"
+            />
+            <div class="p-4 mt-3 bg-slate-900/80 rounded-xl backdrop-blur-sm border border-white/5 flex justify-between items-center text-xs">
+              <div>
+                <p class="font-bold text-white text-sm">Protected Children Home</p>
+                <p class="text-slate-400 font-medium">Coimbatore, Tamil Nadu</p>
+              </div>
+              <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1.5 rounded-lg font-mono font-bold">13+ Girls Sheltered</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KEY STATISTICS BAR -->
+    <section class="bg-white border-b border-slate-200 py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <p class="text-3xl sm:text-4xl font-extrabold text-nizhal-800 tracking-tight">2011</p>
+          <p class="text-xs sm:text-sm text-slate-500 font-bold uppercase tracking-wider mt-1.5">Established Year</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <p class="text-3xl sm:text-4xl font-extrabold text-nizhal-800 tracking-tight">13+</p>
+          <p class="text-xs sm:text-sm text-slate-500 font-bold uppercase tracking-wider mt-1.5">Girls Residing Now</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <p class="text-3xl sm:text-4xl font-extrabold text-nizhal-800 tracking-tight">₹2,000</p>
+          <p class="text-xs sm:text-sm text-slate-500 font-bold uppercase tracking-wider mt-1.5">Daily Operations Expense</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <p class="text-3xl sm:text-4xl font-extrabold text-nizhal-800 tracking-tight">100%</p>
+          <p class="text-xs sm:text-sm text-slate-500 font-bold uppercase tracking-wider mt-1.5">Public Funded Charity</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE DONATION PLANNER / CALCULATOR -->
+    <section id="donation-planner" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+        <span class="text-xs font-extrabold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3.5 py-1 rounded-full">Interactive Sponsorship System</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 serif-title">
+          Donation Cost Planner
+        </h2>
+        <p class="text-slate-500 text-sm sm:text-base">
+          Our budget schemes are structured so you see exactly what utility your money buys. Use this calculator to compile your custom transfer amount.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Column: List of Sponsorship Items -->
+        <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+          <div class="flex justify-between items-center pb-4 mb-4 border-b border-slate-100">
+            <div>
+              <h3 class="font-extrabold text-lg text-slate-900">Sponsor Core Needs</h3>
+              <p class="text-xs text-slate-500">Pick any combination from our verified physical checklist.</p>
+            </div>
+            <button onclick="resetCalculator()" class="text-xs font-bold text-red-500 hover:text-red-700 transition flex items-center gap-1">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reset All
+            </button>
+          </div>
+
+          <!-- Interactive Calculator Items Container -->
+          <div class="space-y-3 max-h-[520px] overflow-y-auto pr-2" id="calculator-items">
+            <!-- Dynamically Rendered by Vanilla JS -->
+          </div>
+
+          <!-- Custom Additional Amount Input -->
+          <div class="mt-6 pt-5 border-t border-slate-100 space-y-2">
+            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Or Specify Custom General Support Amount (₹)</label>
+            <div class="relative rounded-xl shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                <span class="text-slate-400 font-extrabold text-sm">₹</span>
+              </div>
+              <input
+                type="number"
+                id="custom-donation-input"
+                oninput="updateCustomDonation()"
+                placeholder="Enter any custom amount"
+                class="block w-full pl-8 pr-3 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 focus:ring-1 focus:ring-nizhal-500 text-sm font-semibold text-slate-800"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Live Aggregates & Banking Credentials Card -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-800 relative overflow-hidden flex flex-col justify-between">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-nizhal-500/10 rounded-full blur-3xl"></div>
+            
+            <div class="border-b border-slate-800 pb-4 mb-4">
+              <h3 class="font-bold text-base tracking-wide flex items-center gap-2 text-slate-100">
+                <i data-lucide="receipt" class="text-yellow-400 w-5 h-5"></i>
+                Your Sponsorship Summary
+              </h3>
+              <p class="text-xs text-slate-400">Review your compiled physical assistance proposal.</p>
+            </div>
+
+            <!-- List of Selected Items -->
+            <div class="space-y-3 max-h-[160px] overflow-y-auto pr-1 mb-4 text-xs font-mono" id="receipt-summary-list">
+              <!-- Rendered Dynamically -->
+            </div>
+
+            <div class="border-t border-slate-800 pt-4 flex justify-between items-center mb-6">
+              <span class="text-sm font-bold text-slate-300">Total Contribution:</span>
+              <span class="text-2xl sm:text-3xl font-black text-white" id="final-sum-display">₹ 0</span>
+            </div>
+
+            <!-- Authentic KVB Bank details -->
+            <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800/80 space-y-3 text-xs font-mono">
+              <p class="text-yellow-400 text-center font-bold text-[10px] uppercase tracking-widest border-b border-slate-900 pb-2 mb-1">Karur Vysya Bank Account Details</p>
+              
+              <div class="flex justify-between items-center border-b border-slate-900 pb-2">
+                <span class="text-slate-500">Account Name:</span>
+                <span class="text-slate-200 font-bold">Nizhal Charitable Trust</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-slate-900 pb-2">
+                <span class="text-slate-500">Account No:</span>
+                <span class="text-yellow-400 font-extrabold flex items-center gap-1.5 select-all">
+                  <span>1675135000001120</span>
+                  <button 
+                    onclick="copyToClipboard('1675135000001120', 'Account Number')"
+                    class="p-1 hover:bg-slate-800 rounded transition"
+                    title="Copy account number"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400"></i>
+                  </button>
+                </span>
+              </div>
+              <div class="flex justify-between items-center border-b border-slate-900 pb-2">
+                <span class="text-slate-500">Bank Name:</span>
+                <span class="text-slate-300 font-medium">Karur Vysya Bank Ltd</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-slate-900 pb-2">
+                <span class="text-slate-500">Branch:</span>
+                <span class="text-slate-300">Goundampalayam, Coimbatore</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-slate-500">IFSC Code:</span>
+                <span class="text-yellow-400 font-extrabold flex items-center gap-1.5 select-all">
+                  <span>KVBL0001675</span>
+                  <button 
+                    onclick="copyToClipboard('KVBL0001675', 'IFSC Code')"
+                    class="p-1 hover:bg-slate-800 rounded transition"
+                    title="Copy IFSC code"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+
+            <div class="text-[10px] text-slate-400 leading-relaxed mt-4 space-y-2">
+              <p>💡 Cheques / Demand Drafts can be drawn in favor of <strong class="text-slate-200">"Nizhal Charitable Trust"</strong>, payable at Coimbatore.</p>
+              <p>⚠️ After making an offline transfer, please notify us at <strong class="text-slate-200">+91 98424 30307</strong> to obtain your official paper stamp receipt and 80G tax benefit voucher.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 80G TAX EXEMPTION RECEIPT SIMULATOR -->
+    <section class="bg-slate-100 border-y border-slate-200/80 py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto space-y-10">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest">Credibility Verification</span>
+          <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 serif-title">80G Tax Exemption Receipt Preview</h3>
+          <p class="text-xs sm:text-sm text-slate-500">
+            Generate an instant live preview of the formal donation receipt we stamp and deliver for physical tax filing deduction.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Receipt Input Card -->
+          <div class="md:col-span-5 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-4 flex flex-col justify-center">
+            <h4 class="font-extrabold text-slate-900 text-sm tracking-wide">Generate Receipt Specimen</h4>
+            
+            <div class="space-y-1">
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Donor Full Name</label>
+              <input 
+                type="text" 
+                id="receipt-donor-name"
+                oninput="updateReceiptPreview()"
+                value="Anbarasan R"
+                class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800" 
+                placeholder="Full Name of Sponsor"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Donor PAN Number</label>
+              <input 
+                type="text" 
+                id="receipt-donor-pan"
+                oninput="this.value = this.value.toUpperCase(); updateReceiptPreview();"
+                value="ABCDE1234F"
+                maxlength="10"
+                class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-mono font-bold text-slate-800" 
+                placeholder="10-Character PAN"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="block text-[10px] font-bold text-slate-500 uppercase">Donation Amount (₹)</label>
+              <input 
+                type="number" 
+                id="receipt-donor-amount"
+                oninput="updateReceiptPreview()"
+                value="2000"
+                class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800" 
+                placeholder="Sponsorship Amount"
+              />
+            </div>
+
+            <button 
+              onclick="window.print()"
+              class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 rounded-xl text-xs transition flex items-center justify-center gap-2"
+            >
+              <i data-lucide="printer" class="w-4 h-4"></i>
+              Print Copy Specimen
+            </button>
+          </div>
+
+          <!-- Dynamic Output Voucher -->
+          <div class="md:col-span-7 bg-white border-2 border-dashed border-slate-300 p-6 sm:p-8 rounded-2xl flex flex-col justify-between space-y-6 relative overflow-hidden bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]">
+            
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <p class="font-black text-sm tracking-tight text-slate-950 serif-title">NIZHAL CHARITABLE TRUST</p>
+                <p class="text-[10px] text-slate-500 italic">No. 5-1, Sri Sabari Garden, Kavundampalayam, Coimbatore</p>
+                <p class="text-[9px] text-slate-400">Reg No: 470/IV/11 | 12A & 80G Tax-Deduction Certified</p>
+              </div>
+              <div class="text-right text-xs">
+                <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded font-bold uppercase text-[9px] tracking-wider">Specimen Draft</span>
+                <p class="text-[9px] text-slate-400 mt-1.5" id="receipt-date-field">Date: --/--/----</p>
+              </div>
+            </div>
+
+            <div class="space-y-3.5 border-t border-b border-slate-100 py-4 font-mono text-xs">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Received From:</span>
+                <span class="font-bold text-slate-900" id="receipt-display-name">Anbarasan R</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">PAN Number:</span>
+                <span class="font-bold text-slate-900" id="receipt-display-pan">ABCDE1234F</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">Amount Received:</span>
+                <span class="font-black text-emerald-800" id="receipt-display-amount">₹ 2,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">Tax Exemption:</span>
+                <span class="font-bold text-emerald-600">50% Deduction Permitted (Sec 80G)</span>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-end text-[9px] text-slate-400 pt-2">
+              <div>
+                <p class="font-bold">Nizhal Authorized Signatory</p>
+                <div class="h-6 w-16 border-b border-slate-300 mt-1 italic text-slate-600 font-bold">P. Sudha</div>
+              </div>
+              <p class="max-w-[200px] text-right text-[8px] italic leading-normal">
+                * This is a simulated draft for sponsor reference. An official physical certificate with the holographic seal is dispatched upon transaction clearance.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER'S STORY SECTION -->
+    <section id="story-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3 py-1 rounded-full">The Genesis & Origin</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 serif-title">
+          Our Foundation Story
+        </h2>
+        <p class="text-slate-500 text-sm sm:text-base">
+          How experience in counseling broken families led to a dedicated home for girl children in Coimbatore.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-7 space-y-6">
+          <h3 class="text-2xl font-extrabold text-slate-900 font-sans">A Mission Born Out of Empathy</h3>
+          
+          <div class="text-slate-600 space-y-4 leading-relaxed text-sm">
+            <p>
+              Nizhal Charitable Trust is a non-profitable, non-religious, and purely public-funded organization registered under the <strong>Indian Charitable Trust Act (No: 470/IV/11)</strong> in Coimbatore, Tamil Nadu.
+            </p>
+            <p>
+              Our story began directly because of our professional careers. As legal and family consultancy experts operating the <strong>Global Solutions</strong> family consultancy clinic in Coimbatore since 2006, we handled hundreds of complex divorce, separation, and domestic dispute cases. 
+            </p>
+            <p>
+              Every single day, we bore witness to the tragic, silent victims of these broken homes: <strong>the children</strong>. We saw young girls left depressed, highly vulnerable, and entirely abandoned due to the sudden separation, illness, or loss of their parents. 
+            </p>
+            <p>
+              We realized that legal advice and moral support weren't enough. These children needed a secure roof, nutritious meals, structured educational support, and most of all, a place of belonging.
+            </p>
+            <p>
+              Thus, in <strong>2011</strong>, Nizhal Charitable Trust was born. We originally provided support to both boys and girls with our own personal savings. Later, to strictly match the protection frameworks of the Government, from <strong>May 20, 2013</strong>, we restructured our focus exclusively on safeguarding and empowering destitute girl children aged 6 to 16.
+            </p>
+          </div>
+
+          <div class="border-l-4 border-nizhal-700 pl-4 py-1 italic text-slate-700 text-sm">
+            "Our ultimate vision is to build confidence so these girls can grow up to take their rightful place in modern society as highly independent, educated, and valuable citizens."
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-nizhal-950 text-white rounded-2xl p-6 shadow-xl space-y-4">
+            <h4 class="font-bold text-yellow-400 text-sm uppercase tracking-wide flex items-center gap-2">
+              <i data-lucide="eye" class="w-5 h-5"></i> Our Vision
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed font-light">
+              To provide destitute, parentless, and abused girl children with a safe home, nutritious clothing, and robust formal schooling. We create an environment that is secure, fun, and creative where children can express themselves freely and heal.
+            </p>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <h4 class="font-bold text-nizhal-800 text-sm uppercase tracking-wide flex items-center gap-2">
+              <i data-lucide="target" class="w-5 h-5"></i> Our Mission
+            </h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              To maintain a clean and highly supervised home where girl children receive hot wholesome food three times daily, full pairs of school uniforms, notebooks, specialized after-school evening tuition, and medical checkups completely free of cost.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARE STANDARDS SECTION -->
+    <section id="standards-section" class="bg-slate-100/60 border-y border-slate-200/80 py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-100/80 px-3 py-1 rounded-full">Our Facilities & Commitments</span>
+          <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 serif-title">
+            The Core Pillars of Nizhal Care
+          </h3>
+          <p class="text-slate-500 text-sm sm:text-base">
+            Detailed standards we maintain on-site in Goundampalayam to secure the psychological and physical growth of the children.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 1 -->
+          <div class="bg-white border border-slate-200 p-6 rounded-2xl space-y-3 shadow-sm hover:shadow-md transition">
+            <span class="w-10 h-10 bg-nizhal-50 text-nizhal-800 rounded-xl flex items-center justify-center">
+              <i data-lucide="book-open" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-bold text-slate-900 text-base">Study Hour (Evening Tuition)</h3>
+            <p class="text-xs text-slate-500 leading-relaxed font-light">
+              We pay specialized attention to our children's education. A dedicated home tutor visits our premises every evening to guide the girls with homework, clarify core school concepts, and prepare them for examinations.
+            </p>
+          </div>
+          <!-- 2 -->
+          <div class="bg-white border border-slate-200 p-6 rounded-2xl space-y-3 shadow-sm hover:shadow-md transition">
+            <span class="w-10 h-10 bg-yellow-50 text-yellow-800 rounded-xl flex items-center justify-center">
+              <i data-lucide="apple" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-bold text-slate-900 text-base">Wholesome Daily Nutrition</h3>
+            <p class="text-xs text-slate-500 leading-relaxed font-light">
+              Meals are freshly prepared inside our hygienic home kitchen. Children receive hot breakfast, tea, lunch, nutritious evening snacks, and freshly prepared dinner consisting of healthy grains and seasonal local vegetables.
+            </p>
+          </div>
+          <!-- 3 -->
+          <div class="bg-white border border-slate-200 p-6 rounded-2xl space-y-3 shadow-sm hover:shadow-md transition">
+            <span class="w-10 h-10 bg-amber-50 text-amber-800 rounded-xl flex items-center justify-center">
+              <i data-lucide="shirt" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-bold text-slate-900 text-base">Clothes, Uniforms & Footwear</h3>
+            <p class="text-xs text-slate-500 leading-relaxed font-light">
+              We ensure our girls never feel left behind. Every child receives multiple sets of premium casual clothes, school uniforms, matching shoes, writing books, pens, school bags, and personal toiletries.
+            </p>
+          </div>
+          <!-- 4 -->
+          <div class="bg-white border border-slate-200 p-6 rounded-2xl space-y-3 shadow-sm hover:shadow-md transition">
+            <span class="w-10 h-10 bg-blue-50 text-blue-850 rounded-xl flex items-center justify-center">
+              <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-bold text-slate-900 text-base">Pediatric Health Monitoring</h3>
+            <p class="text-xs text-slate-500 leading-relaxed font-light">
+              Periodical medical checkups are arranged with visiting local pediatricians. Height, weight, vaccine intervals, and general nutritional requirements are rigorously tracked for every girl's growth curve.
+            </p>
+          </div>
+          <!-- 5 -->
+          <div class="bg-white border border-slate-200 p-6 rounded-2xl space-y-3 shadow-sm hover:shadow-md transition">
+            <span class="w-10 h-10 bg-red-50 text-red-800 rounded-xl flex items-center justify-center">
+              <i data-lucide="music" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-bold text-slate-900 text-base">Cultural Arts & Music</h3>
+            <p class="text-xs text-slate-500 leading-relaxed font-light">
+              Weekend schedules are structured to build artistic expression. The girls participate in classical singing lessons, drawing, crafting, and folk dancing to build cognitive confidence and relieve traumatic distress.
+            </p>
+          </div>
+          <!-- 6 -->
+          <div class="bg-white border border-slate-200 p-6 rounded-2xl space-y-3 shadow-sm hover:shadow-md transition">
+            <span class="w-10 h-10 bg-emerald-50 text-emerald-800 rounded-xl flex items-center justify-center">
+              <i data-lucide="trophy" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-bold text-slate-900 text-base">Recreation & Playtime</h3>
+            <p class="text-xs text-slate-500 leading-relaxed font-light">
+              Physical play is crucial for sound mental development. Our home features secure play fields where girls enjoy playing badminton, skipping-ropes, and traditional Indian group games with administrative staff supervision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP SECTION -->
+    <section id="leadership-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3 py-1 rounded-full">Trustee Panel</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 serif-title">
+          Meet Our Founders & Trustees
+        </h2>
+        <p class="text-slate-500 text-sm">
+          The compassionate team driving daily home management, educational tie-ups, and legal monitoring compliance.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Trustee 1 -->
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="p-6 space-y-4">
+            <div class="w-14 h-14 bg-nizhal-50 rounded-2xl text-nizhal-800 flex items-center justify-center shadow-inner">
+              <i data-lucide="user" class="w-7 h-7"></i>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-lg font-bold text-slate-900">R. Rajagopal</h3>
+              <p class="text-xs text-nizhal-700 font-extrabold uppercase tracking-widest">Founder - Trustee</p>
+            </div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Family welfare counselor in Coimbatore with over two decades of legal mediation experience. He founded Nizhal to physically shield vulnerable girls from the devastating effects of broken families.
+            </p>
+          </div>
+          <div class="bg-slate-50 px-6 py-4 border-t border-slate-150 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-slate-400"></i> Local Social Mediator since 2006
+          </div>
+        </div>
+
+        <!-- Trustee 2 -->
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="p-6 space-y-4">
+            <div class="w-14 h-14 bg-yellow-50 rounded-2xl text-yellow-800 flex items-center justify-center shadow-inner">
+              <i data-lucide="user-check" class="w-7 h-7"></i>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-lg font-bold text-slate-900">P. Sudha, B.E (ECE)</h3>
+              <p class="text-xs text-nizhal-700 font-extrabold uppercase tracking-widest">Managing Trustee</p>
+            </div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              A professional engineering graduate who has dedicated her administrative knowledge to organizing daily provisions, government audits, medical checks, and tuition schedules for our children.
+            </p>
+          </div>
+          <div class="bg-slate-50 px-6 py-4 border-t border-slate-150 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+            <i data-lucide="cog" class="w-3.5 h-3.5 text-slate-400"></i> Manages All Daily Operations
+          </div>
+        </div>
+
+        <!-- Trustee 3 -->
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="p-6 space-y-4">
+            <div class="w-14 h-14 bg-amber-50 rounded-2xl text-amber-800 flex items-center justify-center shadow-inner">
+              <i data-lucide="users" class="w-7 h-7"></i>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-lg font-bold text-slate-900">S. Kannan, B.Com</h3>
+              <p class="text-xs text-nizhal-700 font-extrabold uppercase tracking-widest">Organising Trustee</p>
+            </div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Active in the corporate sector in Coimbatore, Kannan is a passionate social activist who coordinates bulk grocery procurement, vendor support, and local donor outreach programs.
+            </p>
+          </div>
+          <div class="bg-slate-50 px-6 py-4 border-t border-slate-150 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+            <i data-lucide="share-2" class="w-3.5 h-3.5 text-slate-400"></i> Public Coordinator & Outreaches
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY SECTION -->
+    <section id="gallery-section" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100/60 border-t border-b border-slate-200/80">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-100 px-3 py-1 rounded-full">Gallery Wall</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 serif-title">
+            Our Moments & Activities
+          </h2>
+          <p class="text-slate-500 text-sm">
+            Authentic highlights showing stay routines, evening study hours, cooking, and recreational games.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-2" id="gallery-filters">
+          <button onclick="filterGallery('all')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-extrabold transition-all bg-nizhal-800 text-white shadow-md">All Photos</button>
+          <button onclick="filterGallery('shelter')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Shelter & Stay</button>
+          <button onclick="filterGallery('study')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Education</button>
+          <button onclick="filterGallery('food')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Nutrition & Meals</button>
+          <button onclick="filterGallery('arts')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Arts & Sports</button>
+          <button onclick="filterGallery('medical')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Medical camps</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4" id="gallery-grid">
+          <!-- Populated by JavaScript with filters -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3.5 py-1 rounded-full">Common Queries</span>
+        <h3 class="text-3xl font-extrabold text-slate-900 serif-title">Frequently Asked Questions</h3>
+        <p class="text-xs sm:text-sm text-slate-500">
+          Essential details regarding donations, visiting slots, and transparency compliance.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Q1 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all duration-300">
+          <button onclick="toggleFaq(1)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
+            <span class="font-bold text-sm sm:text-base text-slate-900">Does Nizhal receive any Government grants?</span>
+            <i data-lucide="chevron-down" id="faq-icon-1" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div id="faq-answer-1" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+            No, our children's home does not receive any central or state government grants. All running and capital development costs are completely funded through the kindness of individuals, celebrating families, and corporate CSR entities.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all duration-300">
+          <button onclick="toggleFaq(2)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
+            <span class="font-bold text-sm sm:text-base text-slate-900">How can I celebrate my family events with the girls?</span>
+            <i data-lucide="chevron-down" id="faq-icon-2" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div id="faq-answer-2" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+            Sponsors are most welcome to celebrate birthdays, wedding anniversaries, or memorial days by funding the Entire Home Expenses for a Day (₹2,000) or special menus (₹1,700). You are welcome to visit our girls home, cut cakes, and distribute school articles directly to the children.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all duration-300">
+          <button onclick="toggleFaq(3)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
+            <span class="font-bold text-sm sm:text-base text-slate-900">How is my 80G tax receipt issued?</span>
+            <i data-lucide="chevron-down" id="faq-icon-3" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div id="faq-answer-3" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+            Upon successfully transferring funds to our Karur Vysya Bank account via NetBanking, GPay, or Net transfer, please message or email your receipt screenshot, complete address, and PAN Card number to our Managing Trustees at +91 98424 30307. We will process and mail your sealed physical 80G certificate directly to your address.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3 py-1 rounded-full">Contact Directory</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 serif-title">
+          Contact Details & Addresses
+        </h2>
+        <p class="text-slate-500 text-sm">
+          Please reach out to coordinate groceries, clothes, or stationery drop-offs at our home in Goundampalayam.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12 items-stretch">
+        
+        <!-- Address Details Column -->
+        <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+          <div class="space-y-6">
+            <h3 class="text-xl font-extrabold text-slate-900 serif-title">Official Contact Points</h3>
+            
+            <!-- Home Address -->
+            <div class="flex gap-4 items-start bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+              <span class="p-3 bg-nizhal-50 text-nizhal-800 rounded-xl shrink-0">
+                <i data-lucide="home" class="w-5 h-5"></i>
+              </span>
+              <div class="space-y-1">
+                <h4 class="font-extrabold text-slate-900 text-sm">Nizhal Orphanage Girls Home</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">
+                  No. 5-1, Sri Sabari Garden, Saravana Nagar,<br />
+                  Near Krishna Matriculation School, Goundampalayam,<br />
+                  Coimbatore - 641030, Tamil Nadu, India.
+                </p>
+              </div>
+            </div>
+
+            <!-- Admin Address -->
+            <div class="flex gap-4 items-start bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+              <span class="p-3 bg-amber-50 text-amber-800 rounded-xl shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </span>
+              <div class="space-y-1">
+                <h4 class="font-extrabold text-slate-900 text-sm">Registered Trust Admin Office</h4>
+                <p class="text-xs text-slate-500 leading-relaxed font-light">
+                  No. 39, 3rd Street, Arun Nagar,<br />
+                  TVS Nagar Road, Edayarpalayam,<br />
+                  Coimbatore - 641025, Tamil Nadu, India.
+                </p>
+              </div>
+            </div>
+
+            <!-- Direct Phones -->
+            <div class="flex gap-4 items-start bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+              <span class="p-3 bg-blue-50 text-blue-800 rounded-xl shrink-0">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </span>
+              <div class="space-y-2 text-xs">
+                <h4 class="font-extrabold text-slate-900 text-sm">Direct Office Contact Numbers</h4>
+                <p class="text-slate-600 font-bold space-y-1 mt-1 leading-normal">
+                  <a href="tel:+919842430307" class="block hover:text-nizhal-700">Mobile: +91 98424 30307</a>
+                  <a href="tel:+919698874474" class="block hover:text-nizhal-700">Mobile: +91 96988 74474</a>
+                  <a href="tel:+919842230307" class="block hover:text-nizhal-700">Mobile: +91 98422 30307</a>
+                  <span class="block text-slate-400 font-normal">Landline: 0422-2448839</span>
+                  <span class="block text-slate-400 font-normal">Email: nizhalcharitabletrust@gmail.com</span>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="bg-slate-900 text-slate-400 p-5 rounded-2xl border border-slate-800 text-xs leading-relaxed">
+            <p class="font-bold text-white mb-1.5 flex items-center gap-1.5">
+              <i data-lucide="clock" class="w-4 h-4 text-yellow-450"></i> Visiting Guidelines:
+            </p>
+            <p class="font-light">Sponsors are welcome to visit our girl home daily (08:00 AM to 06:00 PM). Please call the Managing Trustees ahead to prevent any study hour schedule interruptions for the children.</p>
+          </div>
+
+        </div>
+
+        <!-- Query Form Column -->
+        <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-extrabold text-slate-900 serif-title">Send Us a Direct Message</h3>
+              <p class="text-xs text-slate-500">For inquiries regarding grocery drop-offs, event bookings, or material coordination.</p>
+            </div>
+
+            <!-- Submit Form -->
+            <form id="contact-query-form" onsubmit="handleQuerySubmit(event)" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="block text-[10px] font-bold text-slate-500 uppercase">Your Name *</label>
+                  <input 
+                    type="text" 
+                    id="form-name" 
+                    required 
+                    class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800"
+                    placeholder="Enter full name"
+                  />
+                </div>
+                <div class="space-y-1">
+                  <label class="block text-[10px] font-bold text-slate-500 uppercase">Phone Number *</label>
+                  <input 
+                    type="tel" 
+                    id="form-phone" 
+                    required 
+                    class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800"
+                    placeholder="Mobile Number"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-1">
+                <label class="block text-[10px] font-bold text-slate-500 uppercase">Email Address</label>
+                <input 
+                  type="email" 
+                  id="form-email" 
+                  class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800"
+                  placeholder="Your Email ID (optional)"
+                />
+              </div>
+
+              <div class="space-y-1">
+                <label class="block text-[10px] font-bold text-slate-500 uppercase">Your Message *</label>
+                <textarea 
+                  id="form-message" 
+                  rows="4" 
+                  required 
+                  class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800 resize-none"
+                  placeholder="Tell us what you wish to donate or ask..."
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit"
+                class="w-full bg-nizhal-700 hover:bg-nizhal-800 text-white font-bold py-4 px-6 rounded-xl text-xs shadow-md transition flex items-center justify-center gap-2"
+              >
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Send message details
+              </button>
+            </form>
+
+            <!-- Success State Frame -->
+            <div id="query-success" class="hidden bg-emerald-50 border border-emerald-100 rounded-2xl p-8 text-center space-y-4 animate-slideUp">
+              <div class="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto shadow-md">
+                <i data-lucide="check" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-extrabold text-emerald-950">Message Sent Successfully!</h4>
+                <p class="text-xs text-emerald-700 leading-relaxed max-w-md mx-auto mt-1 font-light">
+                  Thank you for your warm initiative. We will respond directly to you at the coordinates provided.
+                </p>
+              </div>
+              <button
+                onclick="resetQueryForm()"
+                class="bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold px-6 py-2.5 rounded-xl text-xs transition"
+              >
+                Send another query
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-300 pt-16 pb-8 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-10 border-b border-slate-900 pb-12">
+      
+      <!-- Column 1 -->
+      <div class="md:col-span-5 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-nizhal-800 rounded-xl flex items-center justify-center text-white">
+            <i data-lucide="heart" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-white text-lg tracking-tight serif-title">NIZHAL CHARITABLE TRUST</h3>
+            <p class="text-[9px] font-extrabold text-nizhal-400 tracking-widest uppercase">Shadow & Shelter to Helpless</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed max-w-sm font-light">
+          Nizhal is a registered, non-profitable, non-religious public-funded shelter home for girls in Coimbatore. We work to relieve daily operational distress, offer complete protection, and support educational development.
+        </p>
+        <p class="text-[10px] text-slate-500">
+          Reg No: 470/IV/11 under Indian Charitable Trust Act. 12A & 80G Certified.
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-bold text-white text-xs uppercase tracking-widest border-b border-slate-900 pb-2 mb-1">Quick Navigation</h4>
+        <ul class="space-y-2.5 text-xs font-semibold">
+          <li><button onclick="navigateToSection('home-section')" class="hover:text-yellow-400 transition text-left">Home Page</button></li>
+          <li><button onclick="navigateToSection('story-section')" class="hover:text-yellow-400 transition text-left">Founder Story & Genesis</button></li>
+          <li><button onclick="navigateToSection('standards-section')" class="hover:text-yellow-400 transition text-left">Facilities & Daily Standards</button></li>
+          <li><button onclick="navigateToSection('leadership-section')" class="hover:text-yellow-400 transition text-left">Trustees Panel</button></li>
+          <li><button onclick="navigateToSection('gallery-section')" class="hover:text-yellow-400 transition text-left">Moment Photo Wall</button></li>
+          <li><button onclick="navigateToSection('contact-section')" class="hover:text-yellow-400 transition text-left">Contact Addresses</button></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="md:col-span-4 space-y-4">
+        <h4 class="font-bold text-white text-xs uppercase tracking-widest border-b border-slate-900 pb-2 mb-1">Banking Credentials</h4>
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3.5 text-xs text-slate-400 font-mono shadow-inner">
+          <div>
+            <span class="text-slate-500 block text-[9px] uppercase font-extrabold">Bank Name</span>
+            <p class="text-slate-200">The Karur Vysya Bank Ltd</p>
+          </div>
+          <div class="flex justify-between gap-4">
+            <div>
+              <span class="text-slate-500 block text-[9px] uppercase font-extrabold">IFSC Code</span>
+              <p class="text-yellow-400 font-bold">KVBL0001675</p>
+            </div>
+            <div>
+              <span class="text-slate-500 block text-[9px] uppercase font-extrabold">Account Number</span>
+              <p class="text-yellow-400 font-bold">1675135000001120</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex flex-col sm:flex-row justify-between items-center text-[10px] text-slate-500 gap-4">
+      <p>© 2026 Nizhal Charitable Trust. All Rights Reserved.</p>
+      <div class="flex gap-4">
+        <span>Founders: R. Rajagopal & P. Sudha</span>
+        <span>•</span>
+        <span>Coimbatore, Tamil Nadu, India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Pop-up System -->
+  <div id="toast" class="hidden fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 border border-slate-800 font-semibold text-xs animate-slideUp">
+    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+    <span id="toast-text">Toast Message</span>
+  </div>
+
+  <!-- APPLICATION BUSINESS LOGIC -->
+  <script>
+    // --- Data Arrays ---
+    const galleryImages = [
+      { id: 1, category: 'shelter', title: 'Protected Girls Dormitories', description: 'Conforming strictly to the safety standards defined by children welfare rules.', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 2, category: 'study', title: 'Interactive Night Tuitions', description: 'A visiting school tutor guides girls with core subjects every single evening.', url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800' },
+      { id: 3, category: 'food', title: 'Onsite Hygienic Cooked Meals', description: 'Serving fresh breakfast, hot lunch, and nutritious dinner in Goundampalayam.', url: 'https://images.unsplash.com/photo-1591389703635-e15a07b842d7?auto=format&fit=crop&q=80&w=800' },
+      { id: 4, category: 'arts', title: 'Weekend Vocal Classes', description: 'Girls learn folk music, drawing, and papercrafts to encourage creative confidence.', url: 'https://images.unsplash.com/photo-1532375811409-905115c3b2a5?auto=format&fit=crop&q=80&w=800' },
+      { id: 5, category: 'medical', title: 'Regular General Medical Checkups', description: 'Visiting pediatricians track height, weight, and general immunization cycles.', url: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=800' },
+      { id: 6, category: 'arts', title: 'Joyous Playground Recreations', description: 'Badminton tournaments and traditional outdoor group games build physical wellness.', url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800' }
+    ];
+
+    const sponsorshipItems = [
+      { id: 'shoes', name: 'Gift a pair of Shoes / Slippers', cost: 245, category: 'Clothing & Utilities' },
+      { id: 'groceries_day', name: 'Sponsor Vegetables & Groceries (1 day)', cost: 350, category: 'Nutrition' },
+      { id: 'medical_month', name: 'General Medical Expenses (1 month for 1 child)', cost: 588, category: 'Health' },
+      { id: 'notebooks', name: 'Gift complete set of Notebooks for a child', cost: 600, category: 'Education' },
+      { id: 'rice_month', name: 'Sponsor Bag of Rice (1 Month)', cost: 1000, category: 'Nutrition' },
+      { id: 'school_pack', name: 'Gift complete School Pack (Bag, Uniform, Shoes, Stationery)', cost: 1600, category: 'Education' },
+      { id: 'dinner', name: 'Provide Special Dinner for all children', cost: 1700, category: 'Nutrition' },
+      { id: 'day_expense', name: 'Sponsor Entire Home Expenses (1 Full Day)', cost: 2000, category: 'Daily Operations' },
+      { id: 'teacher_salary', name: 'Sponsor Evening Teacher Salary (1 Month)', cost: 3430, category: 'Staff Contribution' },
+      { id: 'all_meals', name: 'Provide All 3 Wholesome Meals for 1 Day', cost: 4700, category: 'Nutrition' },
+      { id: 'bookshelves', name: 'Gift Bookshelves, Study Tables or Chairs', cost: 15092, category: 'Infrastructure Support' },
+      { id: 'breakfast_year', name: 'Sponsor Breakfast for all children for 1 Year (on 1 day)', cost: 18000, category: 'Nutrition' },
+    ];
+
+    // Tracker for active calculations
+    let selectedQuantities = {};
+    let customDonationAmount = 0;
+
+    // --- On Window Loaded Event ---
+    window.onload = function() {
+      // Initiate Lucide vector icons
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+      
+      // Set Receipt Date field to today
+      const today = new Date();
+      document.getElementById('receipt-date-field').innerText = `Date: ${today.toLocaleDateString()}`;
+
+      // Initialize lists
+      sponsorshipItems.forEach(item => {
+        selectedQuantities[item.id] = 0;
+      });
+
+      renderCalculatorItems();
+      renderReceiptSummary();
+      filterGallery('all');
+    };
+
+    // --- Core Layout Navigation Navigation Action ---
+    function navigateToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // De-highlight mobile drawer and update desk buttons
+      document.getElementById('mobile-drawer').classList.add('hidden');
+      const deskButtons = document.querySelectorAll('.nav-btn');
+      deskButtons.forEach(btn => {
+        btn.classList.remove('bg-nizhal-100', 'text-nizhal-900', 'font-bold');
+        btn.classList.add('text-slate-600', 'hover:text-nizhal-700', 'hover:bg-slate-100/50');
+      });
+
+      // Highlight standard button based on tab index mapping
+      event.target.classList.add('bg-nizhal-100', 'text-nizhal-900', 'font-bold');
+      event.target.classList.remove('text-slate-600', 'hover:text-nizhal-700', 'hover:bg-slate-100/50');
+    }
+
+    // Toggle Mobile Navigation Drawer
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-drawer');
+      const btn = document.getElementById('mobile-menu-btn');
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        btn.innerHTML = `<i data-lucide="x" class="w-6 h-6"></i>`;
+      } else {
+        drawer.classList.add('hidden');
+        btn.innerHTML = `<i data-lucide="menu" class="w-6 h-6"></i>`;
+      }
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    // --- Dynamic Calculator Construction ---
+    function renderCalculatorItems() {
+      const container = document.getElementById('calculator-items');
+      container.innerHTML = '';
+
+      sponsorshipItems.forEach(item => {
+        const qty = selectedQuantities[item.id] || 0;
+        const itemClass = qty > 0 ? 'border-nizhal-500 bg-nizhal-50/50 shadow-sm' : 'border-slate-150 bg-white hover:border-slate-300';
+        
+        const card = document.createElement('div');
+        card.className = `p-4 rounded-xl border transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 ${itemClass}`;
+        card.innerHTML = `
+          <div class="space-y-1 flex-1">
+            <span class="text-[9px] font-extrabold uppercase bg-slate-100 text-slate-500 px-2 py-0.5 rounded">
+              ${item.category}
+            </span>
+            <h4 class="font-extrabold text-sm text-slate-900">${item.name}</h4>
+            <p class="text-xs font-black text-slate-700">₹ ${item.cost.toLocaleString()}</p>
+          </div>
+
+          <div class="flex items-center gap-3 self-end sm:self-auto">
+            <button
+              onclick="adjustQuantity('${item.id}', -1)"
+              class="w-8 h-8 rounded-lg flex items-center justify-center border font-bold text-sm transition-all ${qty > 0 ? 'border-nizhal-300 bg-white hover:bg-slate-50 text-slate-700' : 'border-slate-100 text-slate-300 cursor-not-allowed'}"
+              ${qty === 0 ? 'disabled' : ''}
+            >
+              -
+            </button>
+            <span class="w-6 text-center font-bold text-sm text-slate-900">${qty}</span>
+            <button
+              onclick="adjustQuantity('${item.id}', 1)"
+              class="w-8 h-8 rounded-lg border border-nizhal-300 bg-white hover:bg-nizhal-50 font-bold text-sm text-nizhal-800 transition"
+            >
+              +
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function adjustQuantity(itemId, change) {
+      const current = selectedQuantities[itemId] || 0;
+      selectedQuantities[itemId] = Math.max(0, current + change);
+      
+      renderCalculatorItems();
+      renderReceiptSummary();
+    }
+
+    function triggerDirectDonation(amount) {
+      // Find 'day_expense' (₹2000) inside list
+      selectedQuantities['day_expense'] = 1;
+      renderCalculatorItems();
+      renderReceiptSummary();
+      navigateToSection('donation-planner');
+      showToastNotification("Sponsor Entire Home (₹2,000) added to planner.");
+    }
+
+    function updateCustomDonation() {
+      const input = document.getElementById('custom-donation-input');
+      customDonationAmount = parseFloat(input.value) || 0;
+      renderReceiptSummary();
+    }
+
+    function resetCalculator() {
+      sponsorshipItems.forEach(item => {
+        selectedQuantities[item.id] = 0;
+      });
+      document.getElementById('custom-donation-input').value = '';
+      customDonationAmount = 0;
+
+      renderCalculatorItems();
+      renderReceiptSummary();
+      showToastNotification("Sponsorship planner values reset.");
+    }
+
+    // Compute live calculations
+    function calculateTotal() {
+      let sum = 0;
+      sponsorshipItems.forEach(item => {
+        sum += (selectedQuantities[item.id] || 0) * item.cost;
+      });
+      sum += customDonationAmount;
+      return sum;
+    }
+
+    function renderReceiptSummary() {
+      const listContainer = document.getElementById('receipt-summary-list');
+      listContainer.innerHTML = '';
+      let hasSelections = false;
+
+      sponsorshipItems.forEach(item => {
+        const qty = selectedQuantities[item.id] || 0;
+        if (qty > 0) {
+          hasSelections = true;
+          const li = document.createElement('div');
+          li.className = 'flex justify-between items-start text-slate-300';
+          li.innerHTML = `
+            <span class="flex-1 pr-4">${item.name} <strong class="text-yellow-400 font-bold">x${qty}</strong></span>
+            <span class="font-bold text-slate-100">₹ ${(item.cost * qty).toLocaleString()}</span>
+          `;
+          listContainer.appendChild(li);
+        }
+      });
+
+      if (customDonationAmount > 0) {
+        hasSelections = true;
+        const li = document.createElement('div');
+        li.className = 'flex justify-between items-start text-slate-300';
+        li.innerHTML = `
+          <span class="flex-1 pr-4">Custom General Support Contribution</span>
+          <span class="font-bold text-slate-100">₹ ${customDonationAmount.toLocaleString()}</span>
+        `;
+        listContainer.appendChild(li);
+      }
+
+      if (!hasSelections) {
+        listContainer.innerHTML = `<p class="text-[11px] text-slate-500 italic text-center py-4">Sponsorship aggregate is empty. Adjust items on the left to estimate transfer totals.</p>`;
+      }
+
+      const grandTotal = calculateTotal();
+      document.getElementById('final-sum-display').innerText = `₹ ${grandTotal.toLocaleString()}`;
+      
+      // Update receipt simulator amount too
+      document.getElementById('receipt-donor-amount').value = grandTotal > 0 ? grandTotal : 2000;
+      updateReceiptPreview();
+    }
+
+    // --- Dynamic Receipt Voucher Previewing ---
+    function updateReceiptPreview() {
+      const name = document.getElementById('receipt-donor-name').value || '_________________';
+      const pan = document.getElementById('receipt-donor-pan').value || '_________________';
+      const amountVal = parseFloat(document.getElementById('receipt-donor-amount').value) || 0;
+
+      document.getElementById('receipt-display-name').innerText = name;
+      document.getElementById('receipt-display-pan').innerText = pan;
+      document.getElementById('receipt-display-amount').innerText = `₹ ${amountVal.toLocaleString()}`;
+    }
+
+    // --- Dynamic Filterable Gallery Wall ---
+    function filterGallery(category) {
+      // Toggle button highlights
+      const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+      filterButtons.forEach(btn => {
+        btn.className = "gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50";
+      });
+
+      // Highlight active
+      event.target.className = "gallery-filter-btn px-4 py-2 rounded-xl text-xs font-extrabold transition-all bg-nizhal-800 text-white shadow-md";
+
+      const grid = document.getElementById('gallery-grid');
+      grid.innerHTML = '';
+
+      const filtered = galleryImages.filter(img => category === 'all' || img.category === category);
+      
+      filtered.forEach(img => {
+        const photoCard = document.createElement('div');
+        photoCard.className = "bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition animate-slideUp";
+        photoCard.innerHTML = `
+          <div class="relative overflow-hidden h-64 bg-slate-100">
+            <img 
+              src="${img.url}" 
+              alt="${img.title}" 
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500 filter brightness-95"
+              onerror="this.src='https://placehold.co/600x400/224a45/ffffff?text=${encodeURIComponent(img.title)}'"
+            />
+          </div>
+          <div class="p-5 space-y-1">
+            <span class="text-[9px] font-extrabold text-nizhal-700 bg-nizhal-50 border border-nizhal-200 px-2 py-0.5 rounded uppercase">
+              ${img.category}
+            </span>
+            <h4 class="font-extrabold text-slate-900 text-sm leading-tight pt-1">${img.title}</h4>
+            <p class="text-xs text-slate-500 leading-relaxed font-light">${img.description}</p>
+          </div>
+        `;
+        grid.appendChild(photoCard);
+      });
+    }
+
+    // --- Form Actions & Success Simulator ---
+    function handleQuerySubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('form-name').value;
+      const phone = document.getElementById('form-phone').value;
+      const msg = document.getElementById('form-message').value;
+
+      if (!name || !phone || !msg) {
+        showToastNotification("Please fill in all mandatory fields.");
+        return;
+      }
+
+      // Hide input fields, display clean success frame
+      document.getElementById('contact-query-form').classList.add('hidden');
+      document.getElementById('query-success').classList.remove('hidden');
+      showToastNotification("Sponsor Query Submitted.");
+    }
+
+    function resetQueryForm() {
+      document.getElementById('form-name').value = '';
+      document.getElementById('form-phone').value = '';
+      document.getElementById('form-email').value = '';
+      document.getElementById('form-message').value = '';
+
+      document.getElementById('contact-query-form').classList.remove('hidden');
+      document.getElementById('query-success').classList.add('hidden');
+    }
+
+    // --- Interactive FAQs Toggle ---
+    function toggleFaq(faqId) {
+      const answer = document.getElementById(`faq-answer-${faqId}`);
+      const icon = document.getElementById(`faq-icon-${faqId}`);
+      
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.classList.add('rotate-185');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        answer.classList.add('hidden');
+        icon.classList.remove('rotate-185');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // --- Toast Alerts and Clip Copy system ---
+    function showToastNotification(msg) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toast-text');
+      
+      text.innerText = msg;
+      toast.classList.remove('hidden');
+      
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3000);
+    }
+
+    function copyToClipboard(text, label) {
+      const dummy = document.createElement('input');
+      document.body.appendChild(dummy);
+      dummy.value = text;
+      dummy.select();
+      document.execCommand('copy');
+      document.body.removeChild(dummy);
+      
+      showToastNotification(`Copied ${label} to clipboard.`);
+    }
+  </script>
+
+</body>
+</html>
