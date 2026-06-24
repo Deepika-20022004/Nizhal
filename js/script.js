@@ -32,15 +32,38 @@
     });
   }
 
-  // Mark the current page's nav link as active
-  var here = location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".main-nav a[href]").forEach(function (link) {
-    var href = link.getAttribute("href");
-    if (href === here || (here === "" && href === "index.html")) {
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-    }
-  });
+  // Scroll Spy to highlight the active link in navigation
+  if ("IntersectionObserver" in window) {
+    var sections = document.querySelectorAll("main > section[id]");
+    var navLinks = document.querySelectorAll(".main-nav a[href^='#']");
+
+    var observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -50% 0px",
+      threshold: 0
+    };
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = "#" + entry.target.getAttribute("id");
+          navLinks.forEach(function (link) {
+            if (link.getAttribute("href") === id) {
+              link.classList.add("active");
+              link.setAttribute("aria-current", "page");
+            } else {
+              link.classList.remove("active");
+              link.removeAttribute("aria-current");
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(function (section) {
+      observer.observe(section);
+    });
+  }
 
   // Copy-to-clipboard for bank details
   document.querySelectorAll("[data-copy-target]").forEach(function (btn) {
