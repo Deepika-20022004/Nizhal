@@ -45,12 +45,45 @@
   // Copy-to-clipboard for bank details
   document.querySelectorAll("[data-copy-target]").forEach(function (btn) {
     btn.addEventListener("click", function () {
+      if (btn.getAttribute("data-copied") === "true") return;
+
       var target = document.querySelector(btn.getAttribute("data-copy-target"));
       if (!target) return;
-      var text = target.textContent.trim();
+      
+      var text = "";
+      var rows = target.querySelectorAll(".bank-row");
+      if (rows.length > 0) {
+        var lines = [];
+        rows.forEach(function (row) {
+          var dt = row.querySelector("dt");
+          var dd = row.querySelector("dd");
+          if (dt && dd) {
+            var key = dt.textContent.trim();
+            var val = dd.innerHTML
+              .replace(/<br\s*\/?>/gi, ", ")
+              .replace(/&ndash;/g, "–")
+              .replace(/&mdash;/g, "—")
+              .replace(/&amp;/g, "&")
+              .replace(/&nbsp;/g, " ")
+              .replace(/\s+/g, " ")
+              .replace(/<\/?[^>]+(>|$)/g, "")
+              .trim();
+            lines.push(key + ": " + val);
+          }
+        });
+        text = lines.join("\n");
+      } else {
+        text = target.textContent.trim();
+      }
+
       navigator.clipboard.writeText(text).then(function () {
+        var originalText = btn.textContent;
+        btn.textContent = "Copied!";
         btn.setAttribute("data-copied", "true");
-        setTimeout(function () { btn.removeAttribute("data-copied"); }, 2000);
+        setTimeout(function () {
+          btn.textContent = originalText;
+          btn.removeAttribute("data-copied");
+        }, 1000);
       });
     });
   });
