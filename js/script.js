@@ -101,7 +101,7 @@
 
       navigator.clipboard.writeText(text).then(function () {
         var originalText = btn.textContent;
-        btn.textContent = "Copied!";
+        btn.textContent = "Copied";
         btn.setAttribute("data-copied", "true");
         setTimeout(function () {
           btn.textContent = originalText;
