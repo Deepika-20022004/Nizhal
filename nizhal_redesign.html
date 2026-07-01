@@ -989,11 +989,11 @@
     // --- Data Arrays ---
     const galleryImages = [
       { id: 1, title: 'Opening Celebration', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
-      { id: 2, title: 'Children', url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800' },
-      { id: 3, title: 'Prayer', url: 'https://images.unsplash.com/photo-1591389703635-e15a07b842d7?auto=format&fit=crop&q=80&w=800' },
-      { id: 4, title: 'Food Time', url: 'https://images.unsplash.com/photo-1532375811409-905115c3b2a5?auto=format&fit=crop&q=80&w=800' },
-      { id: 5, title: 'Children Achievements', url: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=800' },
-      { id: 6, title: 'Children Birthday Celebrations', url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800'}
+      { id: 2, title: 'Children', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 3, title: 'Prayer', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 4, title: 'Food Time', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 5, title: 'Children Achievements', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 6, title: 'Children Birthday Celebrations', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800'}
 
     ];
 
@@ -1069,9 +1069,6 @@
         window.lucide.createIcons();
       }
 
-      // Set Receipt Date field to today
-      const today = new Date();
-      document.getElementById('receipt-date-field').innerText = `Date: ${today.toLocaleDateString()}`;
 
       // Initialize lists
       sponsorshipItems.forEach(item => {
@@ -1339,20 +1336,7 @@
 
       document.getElementById('final-sum-display').innerText = finalDisplay;
 
-      // Update receipt simulator amount too
-      document.getElementById('receipt-donor-amount').value = grandTotal > 0 ? grandTotal : 2000;
-      updateReceiptPreview();
-    }
 
-    // --- Dynamic Receipt Voucher Previewing ---
-    function updateReceiptPreview() {
-      const name = document.getElementById('receipt-donor-name').value || '_________________';
-      const pan = document.getElementById('receipt-donor-pan').value || '_________________';
-      const amountVal = parseFloat(document.getElementById('receipt-donor-amount').value) || 0;
-
-      document.getElementById('receipt-display-name').innerText = name;
-      document.getElementById('receipt-display-pan').innerText = pan;
-      document.getElementById('receipt-display-amount').innerText = `₹${amountVal.toLocaleString()}`;
     }
 
     // --- Render Gallery Wall ---
@@ -1361,6 +1345,7 @@
       grid.innerHTML = '';
 
       galleryImages.forEach(img => {
+        console.log(img.url);
         const photoCard = document.createElement('div');
         photoCard.className = "bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition animate-slideUp";
         photoCard.innerHTML = `
