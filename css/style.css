@@ -182,6 +182,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   position: sticky;
   top: 0;
   z-index: 100;
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(250, 246, 238, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--sand-line);
@@ -220,8 +226,28 @@ ul { margin: 0; padding: 0; list-style: none; }
   border: none;
   cursor: pointer;
   padding: var(--sp-1);
+  position: relative;
+  z-index: 110;
+  color: inherit;
+  transition: color 0.25s ease;
 }
-.nav-toggle svg { width: 26px; height: 26px; }
+.nav-toggle svg { width: 26px; height: 26px; display: block; }
+.nav-toggle svg line {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: 12px 12px;
+}
+.nav-toggle[aria-expanded="true"] {
+  color: var(--sand);
+}
+.nav-toggle[aria-expanded="true"] svg line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] svg line:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] svg line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
 
 .main-nav ul {
   display: flex;
@@ -248,6 +274,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .main-nav {
     position: fixed;
     inset: 0 0 0 30%;
+    z-index: 105;
     background: var(--canopy-dark);
     transform: translateX(100%);
     transition: transform 0.25s ease;
