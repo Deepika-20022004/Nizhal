@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nizhal Charitable Trust - Coimbatore</title>
-  
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter (sans) & Playfair Display (serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
   <!-- Lucide Icons UMD CDN (Standard, safe, non-module execution) -->
   <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
-  
+
   <style>
     body {
       font-family: 'Inter', sans-serif;
     }
+
     .serif-title {
       font-family: 'Playfair Display', serif;
     }
+
     /* Custom premium scrollbar styling */
     ::-webkit-scrollbar {
       width: 6px;
     }
+
     ::-webkit-scrollbar-track {
       background: #f1f5f9;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #cbd5e1;
       border-radius: 4px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #94a3b8;
     }
+
     .hero-pattern {
       background-color: #0c2d25;
       background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
       background-size: 24px 24px;
     }
+
     @keyframes slideUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .animate-slideUp {
       animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
@@ -79,10 +97,13 @@
     }
   </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-nizhal-200 selection:text-nizhal-950 min-h-screen flex flex-col">
+
+<body
+  class="bg-slate-50 text-slate-800 antialiased selection:bg-nizhal-200 selection:text-nizhal-950 min-h-screen flex flex-col">
 
   <!-- Govt. Credential Header Ribbon -->
-  <div class="bg-emerald-950 text-white py-2 px-4 md:px-6 text-xs flex flex-col sm:flex-row justify-between items-center gap-2 font-semibold tracking-wider border-b border-emerald-900">
+  <div
+    class="bg-emerald-950 text-white py-2 px-4 md:px-6 text-xs flex flex-col sm:flex-row justify-between items-center gap-2 font-semibold tracking-wider border-b border-emerald-900">
     <div class="flex items-center gap-2 text-center sm:text-left">
       <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
       <span>Govt. Registered Trust No: 470/IV/11 | 12A & 80G Tax Deductible Status</span>
@@ -92,17 +113,20 @@
         <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i> +91 98424 30307
       </a>
       <span class="text-emerald-800 hidden sm:inline">|</span>
-      <span class="items-center gap-1.5 hidden sm:flex"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400"></i> Coimbatore, TN</span>
+      <span class="items-center gap-1.5 hidden sm:flex"><i data-lucide="map-pin"
+          class="w-3.5 h-3.5 text-emerald-400"></i> Coimbatore, TN</span>
     </div>
   </div>
 
   <!-- Navigation Header -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
+
       <!-- Brand Logo / Wordmark -->
-      <a href="#home" onclick="navigateToSection('home-section')" class="flex items-center gap-3 text-left focus:outline-none group">
-        <div class="w-12 h-12 bg-nizhal-800 rounded-xl flex items-center justify-center text-white shadow-md shadow-nizhal-900/10 group-hover:bg-nizhal-700 transition">
+      <a href="#home" onclick="navigateToSection('home-section')"
+        class="flex items-center gap-3 text-left focus:outline-none group">
+        <div
+          class="w-12 h-12 bg-nizhal-800 rounded-xl flex items-center justify-center text-white shadow-md shadow-nizhal-900/10 group-hover:bg-nizhal-700 transition">
           <i data-lucide="heart" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
         </div>
         <div>
@@ -115,32 +139,38 @@
 
       <!-- Desktop Links navigation -->
       <nav class="hidden lg:flex items-center gap-1">
-        <button onclick="navigateToSection('home-section')" class="nav-btn px-3 py-2 rounded-lg font-bold text-sm text-nizhal-900 bg-nizhal-100 transition-all">Home</button>
-        <button onclick="navigateToSection('story-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Our Story</button>
-        <button onclick="navigateToSection('standards-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Care Standards</button>
-        <button onclick="navigateToSection('leadership-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Leadership</button>
-        <button onclick="navigateToSection('gallery-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Gallery</button>
-        <button onclick="navigateToSection('faq-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">FAQs</button>
-        <button onclick="navigateToSection('contact-section')" class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Contact Us</button>
+        <button onclick="navigateToSection('home-section')"
+          class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-nizhal-900 bg-nizhal-100 transition-all">Home</button>
+        <button onclick="navigateToSection('story-section')"
+          class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Our
+          Story</button>
+        <button onclick="navigateToSection('standards-section')"
+          class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Care
+          Standards</button>
+        <button onclick="navigateToSection('our-team-section')"
+          class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Our Team</button>
+        <button onclick="navigateToSection('gallery-section')"
+          class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Gallery</button>
+        <button onclick="navigateToSection('faq-section')"
+          class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">FAQs</button>
+        <button onclick="navigateToSection('contact-section')"
+          class="nav-btn px-3 py-2 rounded-lg font-semibold text-sm text-slate-600 hover:text-nizhal-700 hover:bg-slate-100/50 transition-all">Contact
+          Us</button>
       </nav>
 
       <!-- Desktop CTA -->
       <div class="hidden lg:flex items-center">
-        <button
-          onclick="navigateToSection('donation-planner')"
-          class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-sm px-5 py-3 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center gap-2"
-        >
+        <button onclick="navigateToSection('donation-planner')"
+          class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-sm px-5 py-3 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center gap-2">
           <i data-lucide="gift" class="w-4 h-4"></i>
           Sponsor & Donate
         </button>
       </div>
 
       <!-- Mobile Menu Toggle -->
-      <button
-        onclick="toggleMobileMenu()"
+      <button onclick="toggleMobileMenu()"
         class="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg focus:outline-none transition"
-        id="mobile-menu-btn"
-      >
+        id="mobile-menu-btn">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
@@ -148,14 +178,25 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-drawer" class="hidden lg:hidden border-t border-slate-150 bg-white py-3 px-4 shadow-xl">
       <div class="flex flex-col gap-1.5">
-        <button onclick="navigateToSection('home-section')" class="text-left w-full px-4 py-3 rounded-xl font-bold text-sm bg-nizhal-800 text-white">Home</button>
-        <button onclick="navigateToSection('story-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Our Story</button>
-        <button onclick="navigateToSection('standards-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Care Standards</button>
-        <button onclick="navigateToSection('leadership-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Leadership</button>
-        <button onclick="navigateToSection('gallery-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Gallery</button>
-        <button onclick="navigateToSection('faq-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">FAQs</button>
-        <button onclick="navigateToSection('contact-section')" class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Contact Us</button>
-        <button onclick="navigateToSection('donation-planner')" class="text-left w-full px-4 py-3 rounded-xl font-extrabold text-sm bg-amber-500 text-slate-950 mt-2 flex items-center justify-center gap-2">
+        <button onclick="navigateToSection('home-section')"
+          class="text-left w-full px-4 py-3 rounded-xl font-bold text-sm bg-nizhal-800 text-white">Home</button>
+        <button onclick="navigateToSection('story-section')"
+          class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Our
+          Story</button>
+        <button onclick="navigateToSection('standards-section')"
+          class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Care
+          Standards</button>
+        <button onclick="navigateToSection('our-team-section')"
+          class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Our Team</button>
+        <button onclick="navigateToSection('gallery-section')"
+          class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Gallery</button>
+        <button onclick="navigateToSection('faq-section')"
+          class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">FAQs</button>
+        <button onclick="navigateToSection('contact-section')"
+          class="text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50">Contact
+          Us</button>
+        <button onclick="navigateToSection('donation-planner')"
+          class="text-left w-full px-4 py-3 rounded-xl font-extrabold text-sm bg-amber-500 text-slate-950 mt-2 flex items-center justify-center gap-2">
           <i data-lucide="gift" class="w-4 h-4"></i> Sponsor & Donate
         </button>
       </div>
@@ -169,31 +210,31 @@
     <section id="home-section" class="relative hero-pattern text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
       <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-emerald-950/20 to-transparent"></div>
       <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
-        
+
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left animate-slideUp">
-          <div class="inline-flex items-center gap-2 bg-emerald-500/15 border border-emerald-400/30 px-3.5 py-1.5 rounded-full text-emerald-300 text-xs font-bold tracking-wider uppercase">
+          <div
+            class="inline-flex items-center gap-2 bg-emerald-500/15 border border-emerald-400/30 px-3.5 py-1.5 rounded-full text-emerald-300 text-xs font-bold tracking-wider uppercase">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
             80G Physical Tax-Exempt Status Approved
           </div>
-          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight serif-title text-slate-100">
+          <h2
+            class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight serif-title text-slate-100">
             Shielding, Nurturing & <span class="text-yellow-400 italic">Empowering</span> Destitute Girls
           </h2>
           <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-            Nizhal Charitable Trust is a non-profitable, non-religious shelter home in Coimbatore. We give safety, legal protection, healthy meals, and high-quality education to girl children who have lost their natural safety nets.
+            Nizhal Charitable Trust is a non-profitable, non-religious shelter home in Coimbatore. We give safety, legal
+            protection, healthy meals, and high-quality education to girl children who have lost their natural safety
+            nets.
           </p>
-          
+
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-            <button
-              onclick="triggerDirectDonation(2000)"
-              class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-lg shadow-amber-900/40 transition-all text-center flex items-center justify-center gap-2"
-            >
-              <i data-lucide="gift" class="w-5 h-5 fill-slate-950"></i>
+            <button onclick="triggerDirectDonation(2000)"
+              class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-lg shadow-amber-900/40 transition-all text-center flex items-center justify-center gap-2">
+              <i data-lucide="gift" class="w-5 h-5  fill-slate-950"></i>
               Sponsor 1 Day (₹2,000)
             </button>
-            <button
-              onclick="navigateToSection('story-section')"
-              class="bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/20 px-8 py-4 rounded-xl backdrop-blur-sm transition-all text-center flex items-center justify-center"
-            >
+            <button onclick="navigateToSection('story-section')"
+              class="bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/20 px-8 py-4 rounded-xl backdrop-blur-sm transition-all text-center flex items-center justify-center">
               Read Founder's Story
             </button>
           </div>
@@ -201,20 +242,21 @@
 
         <!-- Hero Graphic Frame -->
         <div class="lg:col-span-5 relative animate-slideUp">
-          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-nizhal-400 to-amber-500 opacity-20 blur-2xl"></div>
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-nizhal-400 to-amber-500 opacity-20 blur-2xl">
+          </div>
           <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-950/40 p-4">
-            <img 
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600" 
-              alt="Nizhal girls reading books" 
-              class="rounded-xl w-full h-[320px] object-cover filter brightness-95"
-              onerror="this.src='https://placehold.co/600x400/224a45/ffffff?text=Nizhal+Children'"
-            />
-            <div class="p-4 mt-3 bg-slate-900/80 rounded-xl backdrop-blur-sm border border-white/5 flex justify-between items-center text-xs">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600"
+              alt="Nizhal girls reading books" class="rounded-xl w-full h-[320px] object-cover filter brightness-95"
+              onerror="this.src='https://placehold.co/600x400/224a45/ffffff?text=Nizhal+Children'" />
+            <div
+              class="p-4 mt-3 bg-slate-900/80 rounded-xl backdrop-blur-sm border border-white/5 flex justify-between items-center text-xs">
               <div>
                 <p class="font-bold text-white text-sm">Protected Children Home</p>
                 <p class="text-slate-400 font-medium">Coimbatore, Tamil Nadu</p>
               </div>
-              <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1.5 rounded-lg font-mono font-bold">13+ Girls Sheltered</span>
+              <span
+                class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1.5 rounded-lg font-mono font-bold">13+
+                Girls Sheltered</span>
             </div>
           </div>
         </div>
@@ -235,11 +277,13 @@
         </div>
         <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
           <p class="text-3xl sm:text-4xl font-extrabold text-nizhal-800 tracking-tight">₹2,000</p>
-          <p class="text-xs sm:text-sm text-slate-500 font-bold uppercase tracking-wider mt-1.5">Daily Operations Expense</p>
+          <p class="text-xs sm:text-sm text-slate-500 font-bold uppercase tracking-wider mt-1.5">Daily Operations
+            Expense</p>
         </div>
         <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
           <p class="text-3xl sm:text-4xl font-extrabold text-nizhal-800 tracking-tight">100%</p>
-          <p class="text-xs sm:text-sm text-slate-500 font-bold uppercase tracking-wider mt-1.5">Public Funded Charity</p>
+          <p class="text-xs sm:text-sm text-slate-500 font-bold uppercase tracking-wider mt-1.5">Public Funded Charity
+          </p>
         </div>
       </div>
     </section>
@@ -247,17 +291,19 @@
     <!-- INTERACTIVE DONATION PLANNER / CALCULATOR -->
     <section id="donation-planner" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
-        <span class="text-xs font-extrabold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3.5 py-1 rounded-full">Interactive Sponsorship System</span>
+        <span
+          class="text-xs font-extrabold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3.5 py-1 rounded-full">Sponsorship System</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 serif-title">
           Donation Cost Planner
         </h2>
         <p class="text-slate-500 text-sm sm:text-base">
-          Our budget schemes are structured so you see exactly what utility your money buys. Use this calculator to compile your custom transfer amount.
+          Our budget schemes are structured so you see exactly what utility your money buys. Use this calculator to
+          compile your custom transfer amount.
         </p>
       </div>
 
       <div class="grid lg:grid-cols-12 gap-8 items-start">
-        
+
         <!-- Left Column: List of Sponsorship Items -->
         <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
           <div class="flex justify-between items-center pb-4 mb-4 border-b border-slate-100">
@@ -265,9 +311,35 @@
               <h3 class="font-extrabold text-lg text-slate-900">Sponsor Core Needs</h3>
               <p class="text-xs text-slate-500">Pick any combination from our verified physical checklist.</p>
             </div>
-            <button onclick="resetCalculator()" class="text-xs font-bold text-red-500 hover:text-red-700 transition flex items-center gap-1">
+            <button onclick="resetCalculator()"
+              class="text-xs font-bold text-red-500 hover:text-red-700 transition flex items-center gap-1">
               <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reset All
             </button>
+          </div>
+
+          <!-- Category Tabs -->
+          <div class="flex flex-wrap gap-1.5 mb-4" id="calculator-filters">
+            <button onclick="filterCalculator('all', event)"
+              class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all bg-nizhal-800 text-white shadow-sm">All
+              Needs</button>
+            <button onclick="filterCalculator('education', event)"
+              class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Education</button>
+            <button onclick="filterCalculator('food', event)"
+              class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Food
+              & Meals</button>
+            <button onclick="filterCalculator('endowments', event)"
+              class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Endowments</button>
+            <button onclick="filterCalculator('health', event)"
+              class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Health</button>
+            <button onclick="filterCalculator('projects', event)"
+              class="calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100">Small
+              Projects</button>
+          </div>
+
+          <!-- Category Description -->
+          <div id="calculator-category-desc"
+            class="text-xs text-slate-500 bg-slate-50 border border-slate-150 p-3.5 rounded-xl mb-4 italic leading-relaxed">
+            Browse all core needs and sponsorship opportunities across education, food, health, and special projects.
           </div>
 
           <!-- Interactive Calculator Items Container -->
@@ -277,34 +349,30 @@
 
           <!-- Custom Additional Amount Input -->
           <div class="mt-6 pt-5 border-t border-slate-100 space-y-2">
-            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Or Specify Custom General Support Amount (₹)</label>
+            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Or Specify Custom General
+              Support Amount (₹)</label>
             <div class="relative rounded-xl shadow-sm">
               <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
                 <span class="text-slate-400 font-extrabold text-sm">₹</span>
               </div>
-              <input
-                type="number"
-                id="custom-donation-input"
-                oninput="updateCustomDonation()"
+              <input type="number" id="custom-donation-input" oninput="updateCustomDonation()"
                 placeholder="Enter any custom amount"
-                class="block w-full pl-8 pr-3 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 focus:ring-1 focus:ring-nizhal-500 text-sm font-semibold text-slate-800"
-              />
+                class="block w-full pl-8 pr-3 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 focus:ring-1 focus:ring-nizhal-500 text-sm font-semibold text-slate-800" />
             </div>
           </div>
         </div>
 
         <!-- Right Column: Live Aggregates & Banking Credentials Card -->
         <div class="lg:col-span-5 space-y-6">
-          <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-800 relative overflow-hidden flex flex-col justify-between">
+          <div
+            class="bg-slate-900 text-slate-100 rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-800 relative overflow-hidden flex flex-col justify-between">
             <div class="absolute top-0 right-0 w-32 h-32 bg-nizhal-500/10 rounded-full blur-3xl"></div>
-            
+
             <div class="border-b border-slate-800 pb-4 mb-4">
-              <h3 class="font-bold text-base tracking-wide flex items-center gap-2 text-slate-100">
-                <i data-lucide="receipt" class="text-yellow-400 w-5 h-5"></i>
-                Your Sponsorship Summary
-              </h3>
-              <p class="text-xs text-slate-400">Review your compiled physical assistance proposal.</p>
-            </div>
+            <h3 class="font-bold text-base tracking-wide flex items-center gap-2 text-slate-100">
+              Your Sponsorship Summary
+            </h3>
+          </div>
 
             <!-- List of Selected Items -->
             <div class="space-y-3 max-h-[160px] overflow-y-auto pr-1 mb-4 text-xs font-mono" id="receipt-summary-list">
@@ -313,13 +381,15 @@
 
             <div class="border-t border-slate-800 pt-4 flex justify-between items-center mb-6">
               <span class="text-sm font-bold text-slate-300">Total Contribution:</span>
-              <span class="text-2xl sm:text-3xl font-black text-white" id="final-sum-display">₹ 0</span>
+              <span class="text-lg font-bold text-white" id="final-sum-display">₹0</span>
             </div>
 
             <!-- Authentic KVB Bank details -->
             <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800/80 space-y-3 text-xs font-mono">
-              <p class="text-yellow-400 text-center font-bold text-[10px] uppercase tracking-widest border-b border-slate-900 pb-2 mb-1">Karur Vysya Bank Account Details</p>
-              
+              <p
+                class="text-yellow-400 text-center font-bold text-[10px] uppercase tracking-widest border-b border-slate-900 pb-2 mb-1">
+                Karur Vysya Bank Account Details</p>
+
               <div class="flex justify-between items-center border-b border-slate-900 pb-2">
                 <span class="text-slate-500">Account Name:</span>
                 <span class="text-slate-200 font-bold">Nizhal Charitable Trust</span>
@@ -328,11 +398,8 @@
                 <span class="text-slate-500">Account No:</span>
                 <span class="text-yellow-400 font-extrabold flex items-center gap-1.5 select-all">
                   <span>1675135000001120</span>
-                  <button 
-                    onclick="copyToClipboard('1675135000001120', 'Account Number')"
-                    class="p-1 hover:bg-slate-800 rounded transition"
-                    title="Copy account number"
-                  >
+                  <button onclick="copyToClipboard('1675135000001120', 'Account Number')"
+                    class="p-1 hover:bg-slate-800 rounded transition" title="Copy account number">
                     <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400"></i>
                   </button>
                 </span>
@@ -349,11 +416,8 @@
                 <span class="text-slate-500">IFSC Code:</span>
                 <span class="text-yellow-400 font-extrabold flex items-center gap-1.5 select-all">
                   <span>KVBL0001675</span>
-                  <button 
-                    onclick="copyToClipboard('KVBL0001675', 'IFSC Code')"
-                    class="p-1 hover:bg-slate-800 rounded transition"
-                    title="Copy IFSC code"
-                  >
+                  <button onclick="copyToClipboard('KVBL0001675', 'IFSC Code')"
+                    class="p-1 hover:bg-slate-800 rounded transition" title="Copy IFSC code">
                     <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400"></i>
                   </button>
                 </span>
@@ -361,132 +425,23 @@
             </div>
 
             <div class="text-[10px] text-slate-400 leading-relaxed mt-4 space-y-2">
-              <p>💡 Cheques / Demand Drafts can be drawn in favor of <strong class="text-slate-200">"Nizhal Charitable Trust"</strong>, payable at Coimbatore.</p>
-              <p>⚠️ After making an offline transfer, please notify us at <strong class="text-slate-200">+91 98424 30307</strong> to obtain your official paper stamp receipt and 80G tax benefit voucher.</p>
+              <p>💡 Cheques / Demand Drafts can be drawn in favor of <strong class="text-slate-200">"Nizhal Charitable
+                  Trust"</strong>, payable at Coimbatore.</p>
+              <p>⚠️ After making an offline transfer, please notify us at <strong class="text-slate-200">+91 98424
+                  30307</strong> to obtain your official paper stamp receipt and 80G tax benefit voucher.</p>
             </div>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- 80G TAX EXEMPTION RECEIPT SIMULATOR -->
-    <section class="bg-slate-100 border-y border-slate-200/80 py-16 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto space-y-10">
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest">Credibility Verification</span>
-          <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 serif-title">80G Tax Exemption Receipt Preview</h3>
-          <p class="text-xs sm:text-sm text-slate-500">
-            Generate an instant live preview of the formal donation receipt we stamp and deliver for physical tax filing deduction.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-12 gap-8 items-stretch">
-          
-          <!-- Receipt Input Card -->
-          <div class="md:col-span-5 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-4 flex flex-col justify-center">
-            <h4 class="font-extrabold text-slate-900 text-sm tracking-wide">Generate Receipt Specimen</h4>
-            
-            <div class="space-y-1">
-              <label class="block text-[10px] font-bold text-slate-500 uppercase">Donor Full Name</label>
-              <input 
-                type="text" 
-                id="receipt-donor-name"
-                oninput="updateReceiptPreview()"
-                value="Anbarasan R"
-                class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800" 
-                placeholder="Full Name of Sponsor"
-              />
-            </div>
-
-            <div class="space-y-1">
-              <label class="block text-[10px] font-bold text-slate-500 uppercase">Donor PAN Number</label>
-              <input 
-                type="text" 
-                id="receipt-donor-pan"
-                oninput="this.value = this.value.toUpperCase(); updateReceiptPreview();"
-                value="ABCDE1234F"
-                maxlength="10"
-                class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-mono font-bold text-slate-800" 
-                placeholder="10-Character PAN"
-              />
-            </div>
-
-            <div class="space-y-1">
-              <label class="block text-[10px] font-bold text-slate-500 uppercase">Donation Amount (₹)</label>
-              <input 
-                type="number" 
-                id="receipt-donor-amount"
-                oninput="updateReceiptPreview()"
-                value="2000"
-                class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800" 
-                placeholder="Sponsorship Amount"
-              />
-            </div>
-
-            <button 
-              onclick="window.print()"
-              class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 rounded-xl text-xs transition flex items-center justify-center gap-2"
-            >
-              <i data-lucide="printer" class="w-4 h-4"></i>
-              Print Copy Specimen
-            </button>
-          </div>
-
-          <!-- Dynamic Output Voucher -->
-          <div class="md:col-span-7 bg-white border-2 border-dashed border-slate-300 p-6 sm:p-8 rounded-2xl flex flex-col justify-between space-y-6 relative overflow-hidden bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]">
-            
-            <div class="flex justify-between items-start gap-4">
-              <div>
-                <p class="font-black text-sm tracking-tight text-slate-950 serif-title">NIZHAL CHARITABLE TRUST</p>
-                <p class="text-[10px] text-slate-500 italic">No. 5-1, Sri Sabari Garden, Kavundampalayam, Coimbatore</p>
-                <p class="text-[9px] text-slate-400">Reg No: 470/IV/11 | 12A & 80G Tax-Deduction Certified</p>
-              </div>
-              <div class="text-right text-xs">
-                <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded font-bold uppercase text-[9px] tracking-wider">Specimen Draft</span>
-                <p class="text-[9px] text-slate-400 mt-1.5" id="receipt-date-field">Date: --/--/----</p>
-              </div>
-            </div>
-
-            <div class="space-y-3.5 border-t border-b border-slate-100 py-4 font-mono text-xs">
-              <div class="flex justify-between">
-                <span class="text-slate-400">Received From:</span>
-                <span class="font-bold text-slate-900" id="receipt-display-name">Anbarasan R</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-slate-400">PAN Number:</span>
-                <span class="font-bold text-slate-900" id="receipt-display-pan">ABCDE1234F</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-slate-400">Amount Received:</span>
-                <span class="font-black text-emerald-800" id="receipt-display-amount">₹ 2,000</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-slate-400">Tax Exemption:</span>
-                <span class="font-bold text-emerald-600">50% Deduction Permitted (Sec 80G)</span>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-end text-[9px] text-slate-400 pt-2">
-              <div>
-                <p class="font-bold">Nizhal Authorized Signatory</p>
-                <div class="h-6 w-16 border-b border-slate-300 mt-1 italic text-slate-600 font-bold">P. Sudha</div>
-              </div>
-              <p class="max-w-[200px] text-right text-[8px] italic leading-normal">
-                * This is a simulated draft for sponsor reference. An official physical certificate with the holographic seal is dispatched upon transaction clearance.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
       </div>
     </section>
 
     <!-- FOUNDER'S STORY SECTION -->
     <section id="story-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
       <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3 py-1 rounded-full">The Genesis & Origin</span>
+        <span
+          class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3 py-1 rounded-full">The
+          Origin</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 serif-title">
           Our Foundation Story
         </h2>
@@ -498,27 +453,33 @@
       <div class="grid lg:grid-cols-12 gap-12 items-start">
         <div class="lg:col-span-7 space-y-6">
           <h3 class="text-2xl font-extrabold text-slate-900 font-sans">A Mission Born Out of Empathy</h3>
-          
+
           <div class="text-slate-600 space-y-4 leading-relaxed text-sm">
             <p>
-              Nizhal Charitable Trust is a non-profitable, non-religious, and purely public-funded organization registered under the <strong>Indian Charitable Trust Act (No: 470/IV/11)</strong> in Coimbatore, Tamil Nadu.
+              Nizhal Charitable Trust is a non-profitable, non-religious, and purely public-funded organization
+              registered under the <strong>Indian Charitable Trust Act (No: 470/IV/11)</strong> in Coimbatore, Tamil
+              Nadu.
             </p>
             <p>
-              Our story began directly because of our professional careers. As legal and family consultancy experts operating the <strong>Global Solutions</strong> family consultancy clinic in Coimbatore since 2006, we handled hundreds of complex divorce, separation, and domestic dispute cases. 
+              Our story began directly because of our professional careers. As legal and family consultancy experts
+              operating the <strong>Global Solutions</strong> family consultancy clinic in Coimbatore since 2006, we
+              handled hundreds of complex divorce, separation, and domestic dispute cases.
             </p>
             <p>
-              Every single day, we bore witness to the tragic, silent victims of these broken homes: <strong>the children</strong>. We saw young girls left depressed, highly vulnerable, and entirely abandoned due to the sudden separation, illness, or loss of their parents. 
+              Every single day, we bore witness to the tragic, silent victims of these broken homes: <strong>the
+                children</strong>. We saw young girls left depressed, highly vulnerable, and entirely abandoned due to
+              the sudden separation, illness, or loss of their parents.
             </p>
             <p>
-              We realized that legal advice and moral support weren't enough. These children needed a secure roof, nutritious meals, structured educational support, and most of all, a place of belonging.
+              We realized that legal advice and moral support weren't enough. These children needed a secure roof,
+              nutritious meals, structured educational support, and most of all, a place of belonging.
             </p>
             <p>
-              Thus, in <strong>2011</strong>, Nizhal Charitable Trust was born. We originally provided support to both boys and girls with our own personal savings. Later, to strictly match the protection frameworks of the Government, from <strong>May 20, 2013</strong>, we restructured our focus exclusively on safeguarding and empowering destitute girl children aged 6 to 16.
+              Thus, in <strong>2011</strong>, Nizhal Charitable Trust was born. We originally provided support to both
+              boys and girls with our own personal savings. Later, to strictly match the protection frameworks of the
+              Government, from <strong>May 20, 2013</strong>, we restructured our focus exclusively on safeguarding and
+              empowering destitute girl children aged 6 to 16.
             </p>
-          </div>
-
-          <div class="border-l-4 border-nizhal-700 pl-4 py-1 italic text-slate-700 text-sm">
-            "Our ultimate vision is to build confidence so these girls can grow up to take their rightful place in modern society as highly independent, educated, and valuable citizens."
           </div>
         </div>
 
@@ -528,7 +489,9 @@
               <i data-lucide="eye" class="w-5 h-5"></i> Our Vision
             </h4>
             <p class="text-xs text-slate-300 leading-relaxed font-light">
-              To provide destitute, parentless, and abused girl children with a safe home, nutritious clothing, and robust formal schooling. We create an environment that is secure, fun, and creative where children can express themselves freely and heal.
+              To provide destitute, parentless, and abused girl children with a safe home, nutritious clothing, and
+              robust formal schooling. We create an environment that is secure, fun, and creative where children can
+              express themselves freely and heal.
             </p>
           </div>
 
@@ -537,7 +500,9 @@
               <i data-lucide="target" class="w-5 h-5"></i> Our Mission
             </h4>
             <p class="text-xs text-slate-600 leading-relaxed">
-              To maintain a clean and highly supervised home where girl children receive hot wholesome food three times daily, full pairs of school uniforms, notebooks, specialized after-school evening tuition, and medical checkups completely free of cost.
+              To maintain a clean and highly supervised home where girl children receive hot wholesome food three times
+              daily, full pairs of school uniforms, notebooks, specialized after-school evening tuition, and medical
+              checkups completely free of cost.
             </p>
           </div>
         </div>
@@ -548,12 +513,14 @@
     <section id="standards-section" class="bg-slate-100/60 border-y border-slate-200/80 py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-100/80 px-3 py-1 rounded-full">Our Facilities & Commitments</span>
+          <span
+            class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-100/80 px-3 py-1 rounded-full">Our
+            Facilities & Commitments</span>
           <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 serif-title">
             The Core Pillars of Nizhal Care
           </h3>
           <p class="text-slate-500 text-sm sm:text-base">
-            Detailed standards we maintain on-site in Goundampalayam to secure the psychological and physical growth of the children.
+            Standards we maintain to secure the psychological and physical growth of the children.
           </p>
         </div>
 
@@ -565,7 +532,8 @@
             </span>
             <h3 class="font-bold text-slate-900 text-base">Study Hour (Evening Tuition)</h3>
             <p class="text-xs text-slate-500 leading-relaxed font-light">
-              We pay specialized attention to our children's education. A dedicated home tutor visits our premises every evening to guide the girls with homework, clarify core school concepts, and prepare them for examinations.
+              We pay specialized attention to our children's education. A dedicated home tutor visits our premises every
+              evening to guide the girls with homework, clarify core school concepts, and prepare them for examinations.
             </p>
           </div>
           <!-- 2 -->
@@ -575,7 +543,9 @@
             </span>
             <h3 class="font-bold text-slate-900 text-base">Wholesome Daily Nutrition</h3>
             <p class="text-xs text-slate-500 leading-relaxed font-light">
-              Meals are freshly prepared inside our hygienic home kitchen. Children receive hot breakfast, tea, lunch, nutritious evening snacks, and freshly prepared dinner consisting of healthy grains and seasonal local vegetables.
+              Meals are freshly prepared inside our hygienic home kitchen. Children receive hot breakfast, tea, lunch,
+              nutritious evening snacks, and freshly prepared dinner consisting of healthy grains and seasonal local
+              vegetables.
             </p>
           </div>
           <!-- 3 -->
@@ -585,7 +555,8 @@
             </span>
             <h3 class="font-bold text-slate-900 text-base">Clothes, Uniforms & Footwear</h3>
             <p class="text-xs text-slate-500 leading-relaxed font-light">
-              We ensure our girls never feel left behind. Every child receives multiple sets of premium casual clothes, school uniforms, matching shoes, writing books, pens, school bags, and personal toiletries.
+              We ensure our girls never feel left behind. Every child receives multiple sets of premium casual clothes,
+              school uniforms, matching shoes, writing books, pens, school bags, and personal toiletries.
             </p>
           </div>
           <!-- 4 -->
@@ -595,7 +566,8 @@
             </span>
             <h3 class="font-bold text-slate-900 text-base">Pediatric Health Monitoring</h3>
             <p class="text-xs text-slate-500 leading-relaxed font-light">
-              Periodical medical checkups are arranged with visiting local pediatricians. Height, weight, vaccine intervals, and general nutritional requirements are rigorously tracked for every girl's growth curve.
+              Periodical medical checkups are arranged with visiting local pediatricians. Height, weight, vaccine
+              intervals, and general nutritional requirements are rigorously tracked for every girl's growth curve.
             </p>
           </div>
           <!-- 5 -->
@@ -605,7 +577,8 @@
             </span>
             <h3 class="font-bold text-slate-900 text-base">Cultural Arts & Music</h3>
             <p class="text-xs text-slate-500 leading-relaxed font-light">
-              Weekend schedules are structured to build artistic expression. The girls participate in classical singing lessons, drawing, crafting, and folk dancing to build cognitive confidence and relieve traumatic distress.
+              Weekend schedules are structured to build artistic expression. The girls participate in classical singing
+              lessons, drawing, crafting, and folk dancing to build cognitive confidence and relieve traumatic distress.
             </p>
           </div>
           <!-- 6 -->
@@ -615,17 +588,20 @@
             </span>
             <h3 class="font-bold text-slate-900 text-base">Recreation & Playtime</h3>
             <p class="text-xs text-slate-500 leading-relaxed font-light">
-              Physical play is crucial for sound mental development. Our home features secure play fields where girls enjoy playing badminton, skipping-ropes, and traditional Indian group games with administrative staff supervision.
+              Physical play is crucial for sound mental development. Our home features secure play fields where girls
+              enjoy playing badminton, skipping-ropes, and traditional Indian group games with administrative staff
+              supervision.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- LEADERSHIP SECTION -->
-    <section id="leadership-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    <!-- OUR TEAM SECTION -->
+    <section id="our-team-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
       <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3 py-1 rounded-full">Trustee Panel</span>
+        <span
+          class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3 py-1 rounded-full">Leadership</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 serif-title">
           Meet Our Founders & Trustees
         </h2>
@@ -636,9 +612,11 @@
 
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Trustee 1 -->
-        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+        <div
+          class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
           <div class="p-6 space-y-4">
-            <div class="w-14 h-14 bg-nizhal-50 rounded-2xl text-nizhal-800 flex items-center justify-center shadow-inner">
+            <div
+              class="w-14 h-14 bg-nizhal-50 rounded-2xl text-nizhal-800 flex items-center justify-center shadow-inner">
               <i data-lucide="user" class="w-7 h-7"></i>
             </div>
             <div class="space-y-1">
@@ -646,18 +624,18 @@
               <p class="text-xs text-nizhal-700 font-extrabold uppercase tracking-widest">Founder - Trustee</p>
             </div>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Family welfare counselor in Coimbatore with over two decades of legal mediation experience. He founded Nizhal to physically shield vulnerable girls from the devastating effects of broken families.
+              He is running a consultancy (legal & Psychological centre) in the name of GLOBAL SOLUTIONS for the past 21
+              years. He is a family welfare consultant.
             </p>
-          </div>
-          <div class="bg-slate-50 px-6 py-4 border-t border-slate-150 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
-            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-slate-400"></i> Local Social Mediator since 2006
           </div>
         </div>
 
         <!-- Trustee 2 -->
-        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+        <div
+          class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
           <div class="p-6 space-y-4">
-            <div class="w-14 h-14 bg-yellow-50 rounded-2xl text-yellow-800 flex items-center justify-center shadow-inner">
+            <div
+              class="w-14 h-14 bg-yellow-50 rounded-2xl text-yellow-800 flex items-center justify-center shadow-inner">
               <i data-lucide="user-check" class="w-7 h-7"></i>
             </div>
             <div class="space-y-1">
@@ -665,16 +643,15 @@
               <p class="text-xs text-nizhal-700 font-extrabold uppercase tracking-widest">Managing Trustee</p>
             </div>
             <p class="text-xs text-slate-500 leading-relaxed">
-              A professional engineering graduate who has dedicated her administrative knowledge to organizing daily provisions, government audits, medical checks, and tuition schedules for our children.
+              She is working for the past 27 years in a private concern. Her desire is to relieve the children misery
+              and move them into an environment of love and belonging.
             </p>
-          </div>
-          <div class="bg-slate-50 px-6 py-4 border-t border-slate-150 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
-            <i data-lucide="cog" class="w-3.5 h-3.5 text-slate-400"></i> Manages All Daily Operations
           </div>
         </div>
 
         <!-- Trustee 3 -->
-        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+        <div
+          class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
           <div class="p-6 space-y-4">
             <div class="w-14 h-14 bg-amber-50 rounded-2xl text-amber-800 flex items-center justify-center shadow-inner">
               <i data-lucide="users" class="w-7 h-7"></i>
@@ -684,21 +661,21 @@
               <p class="text-xs text-nizhal-700 font-extrabold uppercase tracking-widest">Organising Trustee</p>
             </div>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Active in the corporate sector in Coimbatore, Kannan is a passionate social activist who coordinates bulk grocery procurement, vendor support, and local donor outreach programs.
+              He is working in Auto Print. He is like minded and rendering help to the needy.
             </p>
-          </div>
-          <div class="bg-slate-50 px-6 py-4 border-t border-slate-150 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
-            <i data-lucide="share-2" class="w-3.5 h-3.5 text-slate-400"></i> Public Coordinator & Outreaches
           </div>
         </div>
       </div>
     </section>
 
     <!-- PHOTO GALLERY SECTION -->
-    <section id="gallery-section" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100/60 border-t border-b border-slate-200/80">
+    <section id="gallery-section"
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100/60 border-t border-b border-slate-200/80">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-100 px-3 py-1 rounded-full">Gallery Wall</span>
+          <span
+            class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-100 px-3 py-1 rounded-full">Gallery
+            Wall</span>
           <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 serif-title">
             Our Moments & Activities
           </h2>
@@ -707,19 +684,35 @@
           </p>
         </div>
 
-        <!-- Category Filters -->
-        <div class="flex flex-wrap justify-center gap-2" id="gallery-filters">
-          <button onclick="filterGallery('all')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-extrabold transition-all bg-nizhal-800 text-white shadow-md">All Photos</button>
-          <button onclick="filterGallery('shelter')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Shelter & Stay</button>
-          <button onclick="filterGallery('study')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Education</button>
-          <button onclick="filterGallery('food')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Nutrition & Meals</button>
-          <button onclick="filterGallery('arts')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Arts & Sports</button>
-          <button onclick="filterGallery('medical')" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50">Medical camps</button>
-        </div>
+
 
         <!-- Gallery Grid -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4" id="gallery-grid">
-          <!-- Populated by JavaScript with filters -->
+          <!-- Placeholder Skeleton Cards -->
+          <div class="bg-slate-200 border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
+            <div class="h-64 bg-slate-100"></div>
+            <div class="p-5"><div class="h-4 bg-slate-250 rounded w-2/3"></div></div>
+          </div>
+          <div class="bg-slate-200 border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
+            <div class="h-64 bg-slate-100"></div>
+            <div class="p-5"><div class="h-4 bg-slate-250 rounded w-1/2"></div></div>
+          </div>
+          <div class="bg-slate-200 border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
+            <div class="h-64 bg-slate-100"></div>
+            <div class="p-5"><div class="h-4 bg-slate-250 rounded w-3/4"></div></div>
+          </div>
+          <div class="bg-slate-200 border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
+            <div class="h-64 bg-slate-100"></div>
+            <div class="p-5"><div class="h-4 bg-slate-250 rounded w-3/5"></div></div>
+          </div>
+          <div class="bg-slate-200 border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
+            <div class="h-64 bg-slate-100"></div>
+            <div class="p-5"><div class="h-4 bg-slate-250 rounded w-2/3"></div></div>
+          </div>
+          <div class="bg-slate-200 border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
+            <div class="h-64 bg-slate-100"></div>
+            <div class="p-5"><div class="h-4 bg-slate-250 rounded w-1/2"></div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -727,7 +720,9 @@
     <!-- FAQ ACCORDION SECTION -->
     <section id="faq-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-8">
       <div class="text-center max-w-2xl mx-auto space-y-2">
-        <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3.5 py-1 rounded-full">Common Queries</span>
+        <span
+          class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3.5 py-1 rounded-full">Common
+          Queries</span>
         <h3 class="text-3xl font-extrabold text-slate-900 serif-title">Frequently Asked Questions</h3>
         <p class="text-xs sm:text-sm text-slate-500">
           Essential details regarding donations, visiting slots, and transparency compliance.
@@ -737,34 +732,52 @@
       <div class="space-y-4">
         <!-- Q1 -->
         <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all duration-300">
-          <button onclick="toggleFaq(1)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
-            <span class="font-bold text-sm sm:text-base text-slate-900">Does Nizhal receive any Government grants?</span>
-            <i data-lucide="chevron-down" id="faq-icon-1" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+          <button onclick="toggleFaq(1)"
+            class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
+            <span class="font-bold text-sm sm:text-base text-slate-900">Does Nizhal receive any Government
+              grants?</span>
+            <i data-lucide="chevron-down" id="faq-icon-1"
+              class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
           </button>
-          <div id="faq-answer-1" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
-            No, our children's home does not receive any central or state government grants. All running and capital development costs are completely funded through the kindness of individuals, celebrating families, and corporate CSR entities.
+          <div id="faq-answer-1"
+            class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+            No, our children's home does not receive any central or state government grants. All running and capital
+            development costs are completely funded through the kindness of individuals, celebrating families, and
+            corporate CSR entities.
           </div>
         </div>
 
         <!-- Q2 -->
         <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all duration-300">
-          <button onclick="toggleFaq(2)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
-            <span class="font-bold text-sm sm:text-base text-slate-900">How can I celebrate my family events with the girls?</span>
-            <i data-lucide="chevron-down" id="faq-icon-2" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+          <button onclick="toggleFaq(2)"
+            class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
+            <span class="font-bold text-sm sm:text-base text-slate-900">How can I celebrate my family events with the
+              girls?</span>
+            <i data-lucide="chevron-down" id="faq-icon-2"
+              class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
           </button>
-          <div id="faq-answer-2" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
-            Sponsors are most welcome to celebrate birthdays, wedding anniversaries, or memorial days by funding the Entire Home Expenses for a Day (₹2,000) or special menus (₹1,700). You are welcome to visit our girls home, cut cakes, and distribute school articles directly to the children.
+          <div id="faq-answer-2"
+            class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+            Sponsors are most welcome to celebrate birthdays, wedding anniversaries, or memorial days by funding the
+            Entire Home Expenses for a Day (₹2,000) or special menus (₹1,700). You are welcome to visit our girls home,
+            cut cakes, and distribute school articles directly to the children.
           </div>
         </div>
 
         <!-- Q3 -->
         <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all duration-300">
-          <button onclick="toggleFaq(3)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
+          <button onclick="toggleFaq(3)"
+            class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
             <span class="font-bold text-sm sm:text-base text-slate-900">How is my 80G tax receipt issued?</span>
-            <i data-lucide="chevron-down" id="faq-icon-3" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            <i data-lucide="chevron-down" id="faq-icon-3"
+              class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
           </button>
-          <div id="faq-answer-3" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
-            Upon successfully transferring funds to our Karur Vysya Bank account via NetBanking, GPay, or Net transfer, please message or email your receipt screenshot, complete address, and PAN Card number to our Managing Trustees at +91 98424 30307. We will process and mail your sealed physical 80G certificate directly to your address.
+          <div id="faq-answer-3"
+            class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+            Upon successfully transferring funds to our Karur Vysya Bank account via NetBanking, GPay, or Net transfer,
+            please message or email your receipt screenshot, complete address, and PAN Card number to our Managing
+            Trustees at +91 98424 30307. We will process and mail your sealed physical 80G certificate directly to your
+            address.
           </div>
         </div>
       </div>
@@ -773,7 +786,9 @@
     <!-- CONTACT SECTION -->
     <section id="contact-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
       <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3 py-1 rounded-full">Contact Directory</span>
+        <span
+          class="text-xs font-bold text-nizhal-700 uppercase tracking-widest bg-nizhal-50 border border-nizhal-200 px-3 py-1 rounded-full">Contact
+          Directory</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 serif-title">
           Contact Details & Addresses
         </h2>
@@ -782,156 +797,83 @@
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-12 gap-12 items-stretch">
-        
-        <!-- Address Details Column -->
-        <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
-          <div class="space-y-6">
-            <h3 class="text-xl font-extrabold text-slate-900 serif-title">Official Contact Points</h3>
-            
-            <!-- Home Address -->
-            <div class="flex gap-4 items-start bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
-              <span class="p-3 bg-nizhal-50 text-nizhal-800 rounded-xl shrink-0">
-                <i data-lucide="home" class="w-5 h-5"></i>
-              </span>
-              <div class="space-y-1">
-                <h4 class="font-extrabold text-slate-900 text-sm">Nizhal Orphanage Girls Home</h4>
-                <p class="text-xs text-slate-500 leading-relaxed font-light">
-                  No. 5-1, Sri Sabari Garden, Saravana Nagar,<br />
-                  Near Krishna Matriculation School, Goundampalayam,<br />
-                  Coimbatore - 641030, Tamil Nadu, India.
-                </p>
-              </div>
-            </div>
+      <div class="grid md:grid-cols-3 gap-8 items-stretch">
 
-            <!-- Admin Address -->
-            <div class="flex gap-4 items-start bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
-              <span class="p-3 bg-amber-50 text-amber-800 rounded-xl shrink-0">
-                <i data-lucide="map-pin" class="w-5 h-5"></i>
-              </span>
-              <div class="space-y-1">
-                <h4 class="font-extrabold text-slate-900 text-sm">Registered Trust Admin Office</h4>
-                <p class="text-xs text-slate-500 leading-relaxed font-light">
-                  No. 39, 3rd Street, Arun Nagar,<br />
-                  TVS Nagar Road, Edayarpalayam,<br />
-                  Coimbatore - 641025, Tamil Nadu, India.
-                </p>
-              </div>
-            </div>
-
-            <!-- Direct Phones -->
-            <div class="flex gap-4 items-start bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
-              <span class="p-3 bg-blue-50 text-blue-800 rounded-xl shrink-0">
-                <i data-lucide="phone-call" class="w-5 h-5"></i>
-              </span>
-              <div class="space-y-2 text-xs">
-                <h4 class="font-extrabold text-slate-900 text-sm">Direct Office Contact Numbers</h4>
-                <p class="text-slate-600 font-bold space-y-1 mt-1 leading-normal">
-                  <a href="tel:+919842430307" class="block hover:text-nizhal-700">Mobile: +91 98424 30307</a>
-                  <a href="tel:+919698874474" class="block hover:text-nizhal-700">Mobile: +91 96988 74474</a>
-                  <a href="tel:+919842230307" class="block hover:text-nizhal-700">Mobile: +91 98422 30307</a>
-                  <span class="block text-slate-400 font-normal">Landline: 0422-2448839</span>
-                  <span class="block text-slate-400 font-normal">Email: nizhalcharitabletrust@gmail.com</span>
-                </p>
-              </div>
-            </div>
-
+        <!-- Address Card -->
+        <div class="flex flex-col gap-5 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-12 h-12 bg-nizhal-50 text-nizhal-800 rounded-xl flex items-center justify-center shrink-0 shadow-inner">
+            <i data-lucide="home" class="w-6 h-6"></i>
           </div>
-
-          <div class="bg-slate-900 text-slate-400 p-5 rounded-2xl border border-slate-800 text-xs leading-relaxed">
-            <p class="font-bold text-white mb-1.5 flex items-center gap-1.5">
-              <i data-lucide="clock" class="w-4 h-4 text-yellow-450"></i> Visiting Guidelines:
+          <div class="space-y-2 flex-1">
+            <h3 class="font-extrabold text-slate-900 text-base font-sans">Nizhal Charitable Trust</h3>
+            <p class="text-xs text-slate-500 leading-relaxed font-light">
+              No:5/1, Sri Sabari Garden,<br />
+              Saravana Nagar, near Krishna Matric School,<br />
+              Edayarpalayam(PO),<br />
+              Coimbatore, Tamil Nadu - 641025
             </p>
-            <p class="font-light">Sponsors are welcome to visit our girl home daily (08:00 AM to 06:00 PM). Please call the Managing Trustees ahead to prevent any study hour schedule interruptions for the children.</p>
-          </div>
-
-        </div>
-
-        <!-- Query Form Column -->
-        <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
-          <div class="space-y-6">
-            <div>
-              <h3 class="text-xl font-extrabold text-slate-900 serif-title">Send Us a Direct Message</h3>
-              <p class="text-xs text-slate-500">For inquiries regarding grocery drop-offs, event bookings, or material coordination.</p>
-            </div>
-
-            <!-- Submit Form -->
-            <form id="contact-query-form" onsubmit="handleQuerySubmit(event)" class="space-y-4">
-              <div class="grid sm:grid-cols-2 gap-4">
-                <div class="space-y-1">
-                  <label class="block text-[10px] font-bold text-slate-500 uppercase">Your Name *</label>
-                  <input 
-                    type="text" 
-                    id="form-name" 
-                    required 
-                    class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800"
-                    placeholder="Enter full name"
-                  />
-                </div>
-                <div class="space-y-1">
-                  <label class="block text-[10px] font-bold text-slate-500 uppercase">Phone Number *</label>
-                  <input 
-                    type="tel" 
-                    id="form-phone" 
-                    required 
-                    class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800"
-                    placeholder="Mobile Number"
-                  />
-                </div>
-              </div>
-
-              <div class="space-y-1">
-                <label class="block text-[10px] font-bold text-slate-500 uppercase">Email Address</label>
-                <input 
-                  type="email" 
-                  id="form-email" 
-                  class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800"
-                  placeholder="Your Email ID (optional)"
-                />
-              </div>
-
-              <div class="space-y-1">
-                <label class="block text-[10px] font-bold text-slate-500 uppercase">Your Message *</label>
-                <textarea 
-                  id="form-message" 
-                  rows="4" 
-                  required 
-                  class="w-full text-xs p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-nizhal-500 font-semibold text-slate-800 resize-none"
-                  placeholder="Tell us what you wish to donate or ask..."
-                ></textarea>
-              </div>
-
-              <button 
-                type="submit"
-                class="w-full bg-nizhal-700 hover:bg-nizhal-800 text-white font-bold py-4 px-6 rounded-xl text-xs shadow-md transition flex items-center justify-center gap-2"
-              >
-                <i data-lucide="send" class="w-4 h-4"></i>
-                Send message details
-              </button>
-            </form>
-
-            <!-- Success State Frame -->
-            <div id="query-success" class="hidden bg-emerald-50 border border-emerald-100 rounded-2xl p-8 text-center space-y-4 animate-slideUp">
-              <div class="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto shadow-md">
-                <i data-lucide="check" class="w-6 h-6"></i>
-              </div>
-              <div>
-                <h4 class="font-extrabold text-emerald-950">Message Sent Successfully!</h4>
-                <p class="text-xs text-emerald-700 leading-relaxed max-w-md mx-auto mt-1 font-light">
-                  Thank you for your warm initiative. We will respond directly to you at the coordinates provided.
-                </p>
-              </div>
-              <button
-                onclick="resetQueryForm()"
-                class="bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold px-6 py-2.5 rounded-xl text-xs transition"
-              >
-                Send another query
-              </button>
-            </div>
-
           </div>
         </div>
 
+        <!-- Direct Phones Card -->
+        <div class="flex flex-col gap-5 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-12 h-12 bg-blue-50 text-blue-800 rounded-xl flex items-center justify-center shrink-0 shadow-inner">
+            <i data-lucide="phone-call" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-2 flex-1">
+            <h3 class="font-extrabold text-slate-900 text-base font-sans">Direct Contact Details</h3>
+            <div class="text-xs text-slate-600 space-y-2.5 font-light">
+              <a href="tel:+919842430307" class="block hover:text-nizhal-700 transition flex items-center gap-1.5">
+                <span class="text-slate-400 font-medium">Mobile:</span> <span class="font-bold">+91 98424 30307</span>
+              </a>
+              <a href="tel:+919698874474" class="block hover:text-nizhal-700 transition flex items-center gap-1.5">
+                <span class="text-slate-400 font-medium">Mobile:</span> <span class="font-bold">+91 96988 74474</span>
+              </a>
+              <a href="mailto:nizhalcharitabletrust@gmail.com" class="block hover:text-nizhal-700 transition flex items-center gap-1.5">
+                <span class="text-slate-400 font-medium">Email:</span> <span class="font-bold text-slate-500">nizhalcharitabletrust@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media Profiles Card -->
+        <div class="flex flex-col gap-5 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-12 h-12 bg-rose-50 text-rose-800 rounded-xl flex items-center justify-center shrink-0 shadow-inner">
+            <i data-lucide="share-2" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-2 flex-1">
+            <h3 class="font-extrabold text-slate-900 text-base font-sans">Follow Our Journey</h3>
+            <p class="text-xs text-slate-500 leading-relaxed font-light">
+              Connect with us on social media to see daily updates, photo archives, and support our cause.
+            </p>
+            <div class="flex flex-wrap gap-2.5 pt-1">
+              <a href="https://www.facebook.com/nizhal.charitabletrust" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200 hover:border-emerald-350 transition font-semibold text-xs shadow-sm">
+                <svg class="w-3.5 h-3.5 fill-current text-[#1877F2]" viewBox="0 0 24 24">
+                  <path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.39-1 1-1h2V2h-3c-2.9 0-4 1.76-4 4v2z"/>
+                </svg>
+                Facebook
+              </a>
+              <a href="https://in.pinterest.com/nizhal/" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200 hover:border-emerald-350 transition font-semibold text-xs shadow-sm">
+                <svg class="w-3.5 h-3.5 fill-current text-[#BD081C]" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.91 6.46 9.39-.09-.8-.17-2.03.03-2.91.19-.8 1.25-5.27 1.25-5.27s-.32-.64-.32-1.58c0-1.48.86-2.59 1.93-2.59.91 0 1.35.68 1.35 1.5 0 .92-.58 2.29-.89 3.56-.25 1.07.54 1.94 1.59 1.94 1.91 0 3.38-2.02 3.38-4.93 0-2.58-1.85-4.38-4.5-4.38-3.07 0-4.87 2.3-4.87 4.68 0 .93.36 1.92.8 2.45.09.11.1.2.07.31-.08.33-.26 1.06-.3 1.21-.05.2-.17.24-.39.14-1.47-.69-2.4-2.84-2.4-4.57 0-3.72 2.7-7.14 7.8-7.14 4.09 0 7.27 2.92 7.27 6.81 0 4.07-2.57 7.34-6.13 7.34-1.2 0-2.33-.62-2.72-1.37l-.74 2.82c-.27 1.03-1 2.31-1.49 3.12C10.15 21.79 11.06 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+                </svg>
+                Pinterest
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Visiting Guidelines Banner -->
+      <div class="bg-slate-900 text-slate-400 p-6 sm:p-8 rounded-3xl border border-slate-800 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto shadow-lg hover:border-slate-700 transition duration-300">
+        <p class="font-bold text-white mb-2 flex items-center justify-center gap-2">
+          <i data-lucide="clock" class="w-4.5 h-4.5 text-yellow-450"></i> Visiting Guidelines:
+        </p>
+        <p class="font-light text-center max-w-2xl mx-auto">Sponsors are welcome to visit our girls home daily (08:00 AM to 06:00 PM). Please call
+          the Managing Trustees ahead to prevent any study hour schedule interruptions for the children.</p>
       </div>
     </section>
 
@@ -940,7 +882,7 @@
   <!-- FOOTER -->
   <footer class="bg-slate-950 text-slate-300 pt-16 pb-8 border-t border-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-10 border-b border-slate-900 pb-12">
-      
+
       <!-- Column 1 -->
       <div class="md:col-span-5 space-y-4">
         <div class="flex items-center gap-3">
@@ -949,34 +891,62 @@
           </div>
           <div>
             <h3 class="font-extrabold text-white text-lg tracking-tight serif-title">NIZHAL CHARITABLE TRUST</h3>
-            <p class="text-[9px] font-extrabold text-nizhal-400 tracking-widest uppercase">Shadow & Shelter to Helpless</p>
+            <p class="text-[9px] font-extrabold text-nizhal-400 tracking-widest uppercase">Shadow & Shelter to Helpless
+            </p>
           </div>
         </div>
         <p class="text-xs text-slate-400 leading-relaxed max-w-sm font-light">
-          Nizhal is a registered, non-profitable, non-religious public-funded shelter home for girls in Coimbatore. We work to relieve daily operational distress, offer complete protection, and support educational development.
+          Nizhal is a registered, non-profitable, non-religious public-funded shelter home for girls in Coimbatore. We
+          work to relieve daily operational distress, offer complete protection, and support educational development.
         </p>
         <p class="text-[10px] text-slate-500">
           Reg No: 470/IV/11 under Indian Charitable Trust Act. 12A & 80G Certified.
         </p>
+        <!-- Social Links -->
+        <div class="flex items-center gap-3 pt-3">
+          <a href="https://www.facebook.com/nizhal.charitabletrust" target="_blank" rel="noopener noreferrer" 
+             class="w-9 h-9 rounded-xl bg-slate-900 hover:bg-emerald-800 text-slate-450 hover:text-white flex items-center justify-center border border-slate-800 hover:border-emerald-700 transition duration-300" 
+             title="Follow us on Facebook">
+            <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+              <path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.39-1 1-1h2V2h-3c-2.9 0-4 1.76-4 4v2z"/>
+            </svg>
+          </a>
+          <a href="https://in.pinterest.com/nizhal/" target="_blank" rel="noopener noreferrer" 
+             class="w-9 h-9 rounded-xl bg-slate-900 hover:bg-emerald-800 text-slate-450 hover:text-white flex items-center justify-center border border-slate-800 hover:border-emerald-700 transition duration-300" 
+             title="Follow us on Pinterest">
+            <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.91 6.46 9.39-.09-.8-.17-2.03.03-2.91.19-.8 1.25-5.27 1.25-5.27s-.32-.64-.32-1.58c0-1.48.86-2.59 1.93-2.59.91 0 1.35.68 1.35 1.5 0 .92-.58 2.29-.89 3.56-.25 1.07.54 1.94 1.59 1.94 1.91 0 3.38-2.02 3.38-4.93 0-2.58-1.85-4.38-4.5-4.38-3.07 0-4.87 2.3-4.87 4.68 0 .93.36 1.92.8 2.45.09.11.1.2.07.31-.08.33-.26 1.06-.3 1.21-.05.2-.17.24-.39.14-1.47-.69-2.4-2.84-2.4-4.57 0-3.72 2.7-7.14 7.8-7.14 4.09 0 7.27 2.92 7.27 6.81 0 4.07-2.57 7.34-6.13 7.34-1.2 0-2.33-.62-2.72-1.37l-.74 2.82c-.27 1.03-1 2.31-1.49 3.12C10.15 21.79 11.06 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <!-- Column 2 -->
       <div class="md:col-span-3 space-y-4">
-        <h4 class="font-bold text-white text-xs uppercase tracking-widest border-b border-slate-900 pb-2 mb-1">Quick Navigation</h4>
+        <h4 class="font-bold text-white text-xs uppercase tracking-widest border-b border-slate-900 pb-2 mb-1">Quick
+          Navigation</h4>
         <ul class="space-y-2.5 text-xs font-semibold">
-          <li><button onclick="navigateToSection('home-section')" class="hover:text-yellow-400 transition text-left">Home Page</button></li>
-          <li><button onclick="navigateToSection('story-section')" class="hover:text-yellow-400 transition text-left">Founder Story & Genesis</button></li>
-          <li><button onclick="navigateToSection('standards-section')" class="hover:text-yellow-400 transition text-left">Facilities & Daily Standards</button></li>
-          <li><button onclick="navigateToSection('leadership-section')" class="hover:text-yellow-400 transition text-left">Trustees Panel</button></li>
-          <li><button onclick="navigateToSection('gallery-section')" class="hover:text-yellow-400 transition text-left">Moment Photo Wall</button></li>
-          <li><button onclick="navigateToSection('contact-section')" class="hover:text-yellow-400 transition text-left">Contact Addresses</button></li>
+          <li><button onclick="navigateToSection('home-section')"
+              class="hover:text-yellow-400 transition text-left">Home Page</button></li>
+          <li><button onclick="navigateToSection('story-section')"
+              class="hover:text-yellow-400 transition text-left">Founder Story</button></li>
+          <li><button onclick="navigateToSection('standards-section')"
+              class="hover:text-yellow-400 transition text-left">Facilities & Daily Standards</button></li>
+          <li><button onclick="navigateToSection('leadership-section')"
+              class="hover:text-yellow-400 transition text-left">Trustees Panel</button></li>
+          <li><button onclick="navigateToSection('gallery-section')"
+              class="hover:text-yellow-400 transition text-left">Moment Photo Wall</button></li>
+          <li><button onclick="navigateToSection('contact-section')"
+              class="hover:text-yellow-400 transition text-left">Contact Addresses</button></li>
         </ul>
       </div>
 
       <!-- Column 3 -->
       <div class="md:col-span-4 space-y-4">
-        <h4 class="font-bold text-white text-xs uppercase tracking-widest border-b border-slate-900 pb-2 mb-1">Banking Credentials</h4>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3.5 text-xs text-slate-400 font-mono shadow-inner">
+        <h4 class="font-bold text-white text-xs uppercase tracking-widest border-b border-slate-900 pb-2 mb-1">Banking
+          Credentials</h4>
+        <div
+          class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3.5 text-xs text-slate-400 font-mono shadow-inner">
           <div>
             <span class="text-slate-500 block text-[9px] uppercase font-extrabold">Bank Name</span>
             <p class="text-slate-200">The Karur Vysya Bank Ltd</p>
@@ -996,7 +966,8 @@
 
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex flex-col sm:flex-row justify-between items-center text-[10px] text-slate-500 gap-4">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex flex-col sm:flex-row justify-between items-center text-[10px] text-slate-500 gap-4">
       <p>© 2026 Nizhal Charitable Trust. All Rights Reserved.</p>
       <div class="flex gap-4">
         <span>Founders: R. Rajagopal & P. Sudha</span>
@@ -1007,7 +978,8 @@
   </footer>
 
   <!-- Toast Pop-up System -->
-  <div id="toast" class="hidden fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 border border-slate-800 font-semibold text-xs animate-slideUp">
+  <div id="toast"
+    class="hidden fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 border border-slate-800 font-semibold text-xs animate-slideUp">
     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
     <span id="toast-text">Toast Message</span>
   </div>
@@ -1016,32 +988,79 @@
   <script>
     // --- Data Arrays ---
     const galleryImages = [
-      { id: 1, category: 'shelter', title: 'Protected Girls Dormitories', description: 'Conforming strictly to the safety standards defined by children welfare rules.', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
-      { id: 2, category: 'study', title: 'Interactive Night Tuitions', description: 'A visiting school tutor guides girls with core subjects every single evening.', url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800' },
-      { id: 3, category: 'food', title: 'Onsite Hygienic Cooked Meals', description: 'Serving fresh breakfast, hot lunch, and nutritious dinner in Goundampalayam.', url: 'https://images.unsplash.com/photo-1591389703635-e15a07b842d7?auto=format&fit=crop&q=80&w=800' },
-      { id: 4, category: 'arts', title: 'Weekend Vocal Classes', description: 'Girls learn folk music, drawing, and papercrafts to encourage creative confidence.', url: 'https://images.unsplash.com/photo-1532375811409-905115c3b2a5?auto=format&fit=crop&q=80&w=800' },
-      { id: 5, category: 'medical', title: 'Regular General Medical Checkups', description: 'Visiting pediatricians track height, weight, and general immunization cycles.', url: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=800' },
-      { id: 6, category: 'arts', title: 'Joyous Playground Recreations', description: 'Badminton tournaments and traditional outdoor group games build physical wellness.', url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800' }
+      { id: 1, title: 'Opening Celebration', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 2, title: 'Children', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 3, title: 'Prayer', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 4, title: 'Food Time', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 5, title: 'Children Achievements', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800' },
+      { id: 6, title: 'Children Birthday Celebrations', url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800'}
+
     ];
 
     const sponsorshipItems = [
-      { id: 'shoes', name: 'Gift a pair of Shoes / Slippers', cost: 245, category: 'Clothing & Utilities' },
-      { id: 'groceries_day', name: 'Sponsor Vegetables & Groceries (1 day)', cost: 350, category: 'Nutrition' },
-      { id: 'medical_month', name: 'General Medical Expenses (1 month for 1 child)', cost: 588, category: 'Health' },
-      { id: 'notebooks', name: 'Gift complete set of Notebooks for a child', cost: 600, category: 'Education' },
-      { id: 'rice_month', name: 'Sponsor Bag of Rice (1 Month)', cost: 1000, category: 'Nutrition' },
-      { id: 'school_pack', name: 'Gift complete School Pack (Bag, Uniform, Shoes, Stationery)', cost: 1600, category: 'Education' },
-      { id: 'dinner', name: 'Provide Special Dinner for all children', cost: 1700, category: 'Nutrition' },
-      { id: 'day_expense', name: 'Sponsor Entire Home Expenses (1 Full Day)', cost: 2000, category: 'Daily Operations' },
-      { id: 'teacher_salary', name: 'Sponsor Evening Teacher Salary (1 Month)', cost: 3430, category: 'Staff Contribution' },
-      { id: 'all_meals', name: 'Provide All 3 Wholesome Meals for 1 Day', cost: 4700, category: 'Nutrition' },
-      { id: 'bookshelves', name: 'Gift Bookshelves, Study Tables or Chairs', cost: 15092, category: 'Infrastructure Support' },
-      { id: 'breakfast_year', name: 'Sponsor Breakfast for all children for 1 Year (on 1 day)', cost: 18000, category: 'Nutrition' },
+      // Gift of Education
+      { id: 'edu_bag', name: 'Gift a school bag for a child', cost: 245, costUSD: 5, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_shoes', name: 'Gift a pair of shoes for a child', cost: 245, costUSD: 5, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_uniform', name: 'Gift a set of uniform for a child', cost: 320, costUSD: 6, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_books', name: 'Gift complete set of Note books for a child', cost: 600, costUSD: 12, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_school_pack', name: 'Gift a school pack for a child (Includes school bag, books, pen, pencil, eraser, sharpener, shoes & uniform)', cost: 1600, costUSD: 32, categoryId: 'education', category: 'Gift of Education' },
+      { id: 'edu_teacher', name: "Sponsor a teacher's salary / month", cost: 3430, costUSD: 70, categoryId: 'education', category: 'Gift of Education' },
+
+      // Gift of Food
+      { id: 'food_breakfast', name: 'To Provide breakfast for our children', cost: 1500, costUSD: 23, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_lunch', name: 'To Provide Lunch for our Children', cost: 1700, costUSD: 26, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_dinner', name: 'To Provide Dinner for our Children', cost: 1500, costUSD: 23, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_all_meals', name: 'To Provide all the three times food for our children', cost: 4700, costUSD: 72, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_rice_month', name: 'Sponsor bag of Rice for a month', cost: 1000, costUSD: 15, categoryId: 'food', category: 'Gift of Food' },
+      { id: 'food_groceries_day', name: 'Sponsor Vegetables & Groceries for a day', cost: 350, costUSD: 5, categoryId: 'food', category: 'Gift of Food' },
+
+      // Feeding Endowments
+      { id: 'endow_breakfast', name: 'Breakfast for our children for a year on a day', cost: 18000, costUSD: 277, categoryId: 'endowments', category: 'Feeding Endowments' },
+      { id: 'endow_lunch', name: 'Lunch for our children for a year on a day', cost: 10584, costUSD: 314, categoryId: 'endowments', category: 'Feeding Endowments' },
+      { id: 'endow_dinner', name: 'Dinner for our children for a year on a day', cost: 18000, costUSD: 277, categoryId: 'endowments', category: 'Feeding Endowments' },
+      { id: 'endow_rice_year', name: 'Sponsor bag of Rice for a year', cost: 12000, costUSD: 185, categoryId: 'endowments', category: 'Feeding Endowments' },
+
+      // Gift of Health
+      { id: 'health_medical', name: 'General Medical expenses for a month for a child', cost: 588, costUSD: 12, categoryId: 'health', category: 'Gift of Health' },
+
+      // Small Projects
+      { id: 'proj_bookshelves', name: 'Book shelves, table/chairs for children', cost: 15092, costUSD: 308, categoryId: 'projects', category: 'Small Projects' },
+      { id: 'proj_stationery', name: 'Stationary Items for our Children', cost: 4704, costUSD: 96, categoryId: 'projects', category: 'Small Projects' },
+      { id: 'proj_sheets', name: 'Bed sheets for our Children', cost: 2940, costUSD: 60, categoryId: 'projects', category: 'Small Projects' },
+      { id: 'proj_pillows', name: 'Pillows for our Children', cost: 1911, costUSD: 39, categoryId: 'projects', category: 'Small Projects' },
+      { id: 'proj_dresses', name: 'Dresses for our children', cost: 3724, costUSD: 76, categoryId: 'projects', category: 'Small Projects' }
     ];
 
     // Tracker for active calculations
     let selectedQuantities = {};
     let customDonationAmount = 0;
+    let activeCalculatorFilter = 'all';
+    let usdToInrRate = 83; // fallback default
+
+    const categoryDescriptions = {
+      all: "Browse all core needs and sponsorship opportunities across education, food, health, and special projects.",
+      education: "Education is the process of learning and acquiring information. It is the greatest asset of a human being. It is a must and we provide education to these children, whom we take care of. Your contribution to these schemes would help us in achieving this.",
+      food: "You can provide Breakfast/lunch/dinner etc for our children by sponsoring meals under these schemes. This will be a better opportunity to share and celebrate your birthdays, anniversaries and other special occasions etc.",
+      endowments: "Endowment schemes to sponsor children's meals or staple grain requirements for an entire year.",
+      health: "We need lots of resources to take care of our children’s health. You can contribute to the below by which we can meet the health care needs.",
+      projects: "Sponsor structural needs, furniture, utilities, and daily clothing essentials for the shelter home."
+    };
+
+    async function fetchExchangeRate() {
+      try {
+        const response = await fetch('https://open.er-api.com/v6/latest/USD');
+        if (response.ok) {
+          const data = await response.json();
+          if (data && data.rates && data.rates.INR) {
+            usdToInrRate = parseFloat(data.rates.INR);
+            console.log(`Fetched real-time exchange rate: 1 USD = ₹${usdToInrRate}`);
+            renderReceiptSummary();
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch real-time exchange rate:', error);
+      }
+    }
 
     // --- On Window Loaded Event ---
     window.onload = function() {
@@ -1049,19 +1068,17 @@
       if (window.lucide) {
         window.lucide.createIcons();
       }
-      
-      // Set Receipt Date field to today
-      const today = new Date();
-      document.getElementById('receipt-date-field').innerText = `Date: ${today.toLocaleDateString()}`;
+
 
       // Initialize lists
       sponsorshipItems.forEach(item => {
         selectedQuantities[item.id] = 0;
       });
 
-      renderCalculatorItems();
+      filterCalculator('all');
       renderReceiptSummary();
-      filterGallery('all');
+      renderGallery();
+      fetchExchangeRate();
     };
 
     // --- Core Layout Navigation Navigation Action ---
@@ -1080,8 +1097,10 @@
       });
 
       // Highlight standard button based on tab index mapping
-      event.target.classList.add('bg-nizhal-100', 'text-nizhal-900', 'font-bold');
-      event.target.classList.remove('text-slate-600', 'hover:text-nizhal-700', 'hover:bg-slate-100/50');
+      if (event && event.target) {
+        event.target.classList.add('bg-nizhal-100', 'text-nizhal-900', 'font-bold');
+        event.target.classList.remove('text-slate-600', 'hover:text-nizhal-700', 'hover:bg-slate-100/50');
+      }
     }
 
     // Toggle Mobile Navigation Drawer
@@ -1099,61 +1118,128 @@
     }
 
     // --- Dynamic Calculator Construction ---
+    function filterCalculator(category, event) {
+      activeCalculatorFilter = category;
+
+      // Update filter button styles
+      const buttons = document.querySelectorAll('.calc-filter-btn');
+      buttons.forEach(btn => {
+        btn.className = "calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100";
+      });
+
+      // Highlight the active button
+      let clickedBtn = event ? event.target : null;
+      if (!clickedBtn) {
+        clickedBtn = Array.from(buttons).find(b => b.getAttribute('onclick').includes(`'${category}'`));
+      }
+      if (clickedBtn) {
+        clickedBtn.className = "calc-filter-btn px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all bg-nizhal-800 text-white shadow-sm";
+      }
+
+      // Update description text
+      const descContainer = document.getElementById('calculator-category-desc');
+      if (descContainer) {
+        descContainer.innerText = categoryDescriptions[category] || '';
+      }
+
+      renderCalculatorItems();
+    }
+
     function renderCalculatorItems() {
       const container = document.getElementById('calculator-items');
       container.innerHTML = '';
 
-      sponsorshipItems.forEach(item => {
-        const qty = selectedQuantities[item.id] || 0;
-        const itemClass = qty > 0 ? 'border-nizhal-500 bg-nizhal-50/50 shadow-sm' : 'border-slate-150 bg-white hover:border-slate-300';
-        
-        const card = document.createElement('div');
-        card.className = `p-4 rounded-xl border transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 ${itemClass}`;
-        card.innerHTML = `
-          <div class="space-y-1 flex-1">
-            <span class="text-[9px] font-extrabold uppercase bg-slate-100 text-slate-500 px-2 py-0.5 rounded">
-              ${item.category}
-            </span>
-            <h4 class="font-extrabold text-sm text-slate-900">${item.name}</h4>
-            <p class="text-xs font-black text-slate-700">₹ ${item.cost.toLocaleString()}</p>
-          </div>
+      const filteredItems = sponsorshipItems.filter(item => activeCalculatorFilter === 'all' || item.categoryId === activeCalculatorFilter);
 
-          <div class="flex items-center gap-3 self-end sm:self-auto">
-            <button
-              onclick="adjustQuantity('${item.id}', -1)"
-              class="w-8 h-8 rounded-lg flex items-center justify-center border font-bold text-sm transition-all ${qty > 0 ? 'border-nizhal-300 bg-white hover:bg-slate-50 text-slate-700' : 'border-slate-100 text-slate-300 cursor-not-allowed'}"
-              ${qty === 0 ? 'disabled' : ''}
-            >
-              -
-            </button>
-            <span class="w-6 text-center font-bold text-sm text-slate-900">${qty}</span>
-            <button
-              onclick="adjustQuantity('${item.id}', 1)"
-              class="w-8 h-8 rounded-lg border border-nizhal-300 bg-white hover:bg-nizhal-50 font-bold text-sm text-nizhal-800 transition"
-            >
-              +
-            </button>
-          </div>
-        `;
-        container.appendChild(card);
+      // Group items by categoryId to preserve ordering as defined in sponsorshipItems
+      const groups = [];
+      const groupMap = {};
+
+      filteredItems.forEach(item => {
+        if (!groupMap[item.categoryId]) {
+          groupMap[item.categoryId] = {
+            id: item.categoryId,
+            name: item.category,
+            items: []
+          };
+          groups.push(groupMap[item.categoryId]);
+        }
+        groupMap[item.categoryId].items.push(item);
       });
+
+      groups.forEach(group => {
+        // Create category section container
+        const section = document.createElement('div');
+        section.className = 'space-y-3 mb-6';
+
+        // Sub heading for the category
+        const subHeading = document.createElement('div');
+        subHeading.className = 'pt-2 pb-1.5 border-b border-slate-150 flex items-center gap-2 mb-2';
+        subHeading.innerHTML = `
+          <span class="w-1.5 h-1.5 rounded-full bg-nizhal-600"></span>
+          <h5 class="text-xs font-black uppercase tracking-wider text-nizhal-850">${group.name}</h5>
+        `;
+        section.appendChild(subHeading);
+
+        // Render cards for items in this group
+        group.items.forEach(item => {
+          const qty = selectedQuantities[item.id] || 0;
+          const itemClass = qty > 0 ? 'border-nizhal-500 bg-nizhal-50/50 shadow-sm' : 'border-slate-150 bg-white hover:border-slate-300';
+
+          const card = document.createElement('div');
+          card.className = `p-4 rounded-xl border transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 ${itemClass}`;
+          card.innerHTML = `
+            <div class="space-y-1 flex-1">
+              <h4 class="text-sm text-slate-900">${item.name}</h4>
+              <p class="text-xs font-black text-slate-700">₹${item.cost.toLocaleString()} <span class="text-slate-400 font-normal text-[11px]">/ US $${item.costUSD}</span></p>
+            </div>
+
+            <div class="flex items-center gap-3 self-end sm:self-auto">
+              <button
+                onclick="adjustQuantity('${item.id}', -1)"
+                class="w-8 h-8 rounded-lg flex items-center justify-center border font-bold text-sm transition-all ${qty > 0 ? 'border-nizhal-300 bg-white hover:bg-slate-50 text-slate-700' : 'border-slate-100 text-slate-300 cursor-not-allowed'}"
+                ${qty === 0 ? 'disabled' : ''}
+              >
+                -
+              </button>
+              <span class="w-6 text-center font-bold text-sm text-slate-900">${qty}</span>
+              <button
+                onclick="adjustQuantity('${item.id}', 1)"
+                class="w-8 h-8 rounded-lg border border-nizhal-300 bg-white hover:bg-nizhal-50 font-bold text-sm text-nizhal-800 transition"
+              >
+                +
+              </button>
+            </div>
+          `;
+          section.appendChild(card);
+        });
+
+        container.appendChild(section);
+      });
+
+      if (filteredItems.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 italic text-center py-8">No items found in this category.</p>`;
+      }
     }
 
     function adjustQuantity(itemId, change) {
       const current = selectedQuantities[itemId] || 0;
       selectedQuantities[itemId] = Math.max(0, current + change);
-      
+
       renderCalculatorItems();
       renderReceiptSummary();
     }
 
     function triggerDirectDonation(amount) {
-      // Find 'day_expense' (₹2000) inside list
-      selectedQuantities['day_expense'] = 1;
+      // Set the custom donation input and variable
+      const customInput = document.getElementById('custom-donation-input');
+      if (customInput) {
+        customInput.value = amount;
+      }
+      customDonationAmount = amount;
       renderCalculatorItems();
       renderReceiptSummary();
       navigateToSection('donation-planner');
-      showToastNotification("Sponsor Entire Home (₹2,000) added to planner.");
     }
 
     function updateCustomDonation() {
@@ -1166,12 +1252,14 @@
       sponsorshipItems.forEach(item => {
         selectedQuantities[item.id] = 0;
       });
-      document.getElementById('custom-donation-input').value = '';
+      const customInput = document.getElementById('custom-donation-input');
+      if (customInput) {
+        customInput.value = '';
+      }
       customDonationAmount = 0;
 
       renderCalculatorItems();
       renderReceiptSummary();
-      showToastNotification("Sponsorship planner values reset.");
     }
 
     // Compute live calculations
@@ -1181,6 +1269,14 @@
         sum += (selectedQuantities[item.id] || 0) * item.cost;
       });
       sum += customDonationAmount;
+      return sum;
+    }
+
+    function calculateTotalUSD() {
+      let sum = 0;
+      sponsorshipItems.forEach(item => {
+        sum += (selectedQuantities[item.id] || 0) * (item.costUSD || 0);
+      });
       return sum;
     }
 
@@ -1194,10 +1290,13 @@
         if (qty > 0) {
           hasSelections = true;
           const li = document.createElement('div');
-          li.className = 'flex justify-between items-start text-slate-300';
+          li.className = 'flex justify-between items-start text-slate-300 mb-1';
           li.innerHTML = `
             <span class="flex-1 pr-4">${item.name} <strong class="text-yellow-400 font-bold">x${qty}</strong></span>
-            <span class="font-bold text-slate-100">₹ ${(item.cost * qty).toLocaleString()}</span>
+            <span class="font-bold text-slate-100 text-right shrink-0">
+              ₹${(item.cost * qty).toLocaleString()}
+              <br/><span class="text-slate-400 font-normal text-[10px]">US $${(item.costUSD * qty).toLocaleString()}</span>
+            </span>
           `;
           listContainer.appendChild(li);
         }
@@ -1206,10 +1305,13 @@
       if (customDonationAmount > 0) {
         hasSelections = true;
         const li = document.createElement('div');
-        li.className = 'flex justify-between items-start text-slate-300';
+        li.className = 'flex justify-between items-start text-slate-300 mb-1';
         li.innerHTML = `
           <span class="flex-1 pr-4">Custom General Support Contribution</span>
-          <span class="font-bold text-slate-100">₹ ${customDonationAmount.toLocaleString()}</span>
+          <span class="font-bold text-slate-100 text-right shrink-0">
+            ₹${customDonationAmount.toLocaleString()}
+            <br/><span class="text-slate-400 font-normal text-[10px]">US $${(Math.round(customDonationAmount / usdToInrRate)).toLocaleString()}</span>
+          </span>
         `;
         listContainer.appendChild(li);
       }
@@ -1219,41 +1321,31 @@
       }
 
       const grandTotal = calculateTotal();
-      document.getElementById('final-sum-display').innerText = `₹ ${grandTotal.toLocaleString()}`;
-      
-      // Update receipt simulator amount too
-      document.getElementById('receipt-donor-amount').value = grandTotal > 0 ? grandTotal : 2000;
-      updateReceiptPreview();
+      const grandTotalUSD = calculateTotalUSD();
+
+      let finalDisplay = `₹${grandTotal.toLocaleString()}`;
+      if (grandTotal > 0) {
+        let estUSD = grandTotalUSD;
+        if (customDonationAmount > 0) {
+          estUSD += Math.round(customDonationAmount / usdToInrRate);
+        }
+        finalDisplay += ` / US $${estUSD.toLocaleString()}`;
+      } else {
+        finalDisplay = `₹0`;
+      }
+
+      document.getElementById('final-sum-display').innerText = finalDisplay;
+
+
     }
 
-    // --- Dynamic Receipt Voucher Previewing ---
-    function updateReceiptPreview() {
-      const name = document.getElementById('receipt-donor-name').value || '_________________';
-      const pan = document.getElementById('receipt-donor-pan').value || '_________________';
-      const amountVal = parseFloat(document.getElementById('receipt-donor-amount').value) || 0;
-
-      document.getElementById('receipt-display-name').innerText = name;
-      document.getElementById('receipt-display-pan').innerText = pan;
-      document.getElementById('receipt-display-amount').innerText = `₹ ${amountVal.toLocaleString()}`;
-    }
-
-    // --- Dynamic Filterable Gallery Wall ---
-    function filterGallery(category) {
-      // Toggle button highlights
-      const filterButtons = document.querySelectorAll('.gallery-filter-btn');
-      filterButtons.forEach(btn => {
-        btn.className = "gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50";
-      });
-
-      // Highlight active
-      event.target.className = "gallery-filter-btn px-4 py-2 rounded-xl text-xs font-extrabold transition-all bg-nizhal-800 text-white shadow-md";
-
+    // --- Render Gallery Wall ---
+    function renderGallery() {
       const grid = document.getElementById('gallery-grid');
       grid.innerHTML = '';
 
-      const filtered = galleryImages.filter(img => category === 'all' || img.category === category);
-      
-      filtered.forEach(img => {
+      galleryImages.forEach(img => {
+        console.log(img.url);
         const photoCard = document.createElement('div');
         photoCard.className = "bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition animate-slideUp";
         photoCard.innerHTML = `
@@ -1265,13 +1357,7 @@
               onerror="this.src='https://placehold.co/600x400/224a45/ffffff?text=${encodeURIComponent(img.title)}'"
             />
           </div>
-          <div class="p-5 space-y-1">
-            <span class="text-[9px] font-extrabold text-nizhal-700 bg-nizhal-50 border border-nizhal-200 px-2 py-0.5 rounded uppercase">
-              ${img.category}
-            </span>
-            <h4 class="font-extrabold text-slate-900 text-sm leading-tight pt-1">${img.title}</h4>
-            <p class="text-xs text-slate-500 leading-relaxed font-light">${img.description}</p>
-          </div>
+          <div class="p-5 space-y-1 text-xs text-slate-900 font-semibold">${img.title}</div>
         `;
         grid.appendChild(photoCard);
       });
@@ -1286,7 +1372,6 @@
       const msg = document.getElementById('form-message').value;
 
       if (!name || !phone || !msg) {
-        showToastNotification("Please fill in all mandatory fields.");
         return;
       }
 
@@ -1310,7 +1395,7 @@
     function toggleFaq(faqId) {
       const answer = document.getElementById(`faq-answer-${faqId}`);
       const icon = document.getElementById(`faq-icon-${faqId}`);
-      
+
       if (answer.classList.contains('hidden')) {
         answer.classList.remove('hidden');
         icon.classList.add('rotate-185');
@@ -1326,10 +1411,10 @@
     function showToastNotification(msg) {
       const toast = document.getElementById('toast');
       const text = document.getElementById('toast-text');
-      
+
       text.innerText = msg;
       toast.classList.remove('hidden');
-      
+
       setTimeout(() => {
         toast.classList.add('hidden');
       }, 3000);
@@ -1342,10 +1427,10 @@
       dummy.select();
       document.execCommand('copy');
       document.body.removeChild(dummy);
-      
-      showToastNotification(`Copied ${label} to clipboard.`);
+
     }
   </script>
 
 </body>
+
 </html>
