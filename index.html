@@ -1083,23 +1083,66 @@
 
     // --- Core Layout Navigation Navigation Action ---
     function navigateToSection(sectionId) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+      // 1. De-highlight mobile drawer first so layout returns to normal collapsed height
+      const drawer = document.getElementById('mobile-drawer');
+      if (drawer) {
+        drawer.classList.add('hidden');
       }
 
-      // De-highlight mobile drawer and update desk buttons
-      document.getElementById('mobile-drawer').classList.add('hidden');
+      // Reset mobile toggle button icon to hamburger menu
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      if (menuBtn) {
+        menuBtn.innerHTML = `<i data-lucide="menu" class="w-6 h-6"></i>`;
+        if (window.lucide) window.lucide.createIcons();
+      }
+
+      // 2. Scroll to the section with proper offset (80px for the sticky header)
+      const section = document.getElementById(sectionId);
+      if (sectionId === 'home-section') {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } else if (section) {
+        const headerHeight = 80;
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+
+      // Update desktop buttons
       const deskButtons = document.querySelectorAll('.nav-btn');
       deskButtons.forEach(btn => {
         btn.classList.remove('bg-nizhal-100', 'text-nizhal-900', 'font-bold');
         btn.classList.add('text-slate-600', 'hover:text-nizhal-700', 'hover:bg-slate-100/50');
       });
 
-      // Highlight standard button based on tab index mapping
-      if (event && event.target) {
-        event.target.classList.add('bg-nizhal-100', 'text-nizhal-900', 'font-bold');
-        event.target.classList.remove('text-slate-600', 'hover:text-nizhal-700', 'hover:bg-slate-100/50');
+      // Highlight target desktop button based on sectionId
+      const targetDeskBtn = Array.from(deskButtons).find(btn => btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(sectionId));
+      if (targetDeskBtn) {
+        targetDeskBtn.classList.add('bg-nizhal-100', 'text-nizhal-900', 'font-bold');
+        targetDeskBtn.classList.remove('text-slate-600', 'hover:text-nizhal-700', 'hover:bg-slate-100/50');
+      }
+
+      // Update mobile drawer button highlights cleanly
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      if (mobileDrawer) {
+        const mobButtons = mobileDrawer.querySelectorAll('button');
+        mobButtons.forEach(btn => {
+          if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes('donation-planner')) {
+            return; // Don't alter Sponsor & Donate button style
+          }
+          btn.className = "text-left w-full px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-slate-50";
+        });
+
+        const targetMobBtn = Array.from(mobButtons).find(btn => btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(sectionId));
+        if (targetMobBtn && !sectionId.includes('donation-planner')) {
+          targetMobBtn.className = "text-left w-full px-4 py-3 rounded-xl font-bold text-sm bg-nizhal-800 text-white";
+        }
       }
     }
 
